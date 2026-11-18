@@ -1,0 +1,13 @@
+# ruff 配置（2026-11-19，任务 2 CI 首跑前预检后制定）
+# 规则集：默认 E4/E7/E9/F（真错误类）。风格类规则（UP0xx 注解现代化、EXE001
+# shebang、BLE001 盲 except、S/PLW 等）暂不启用——M1 历史代码量大，留给 M4
+# 代码质量专项清理；E722（bare-except）同属历史遗留，暂豁免。
+line-length = 100
+target-version = "py311"
+
+[lint]
+select = ["E4", "E7", "E9", "F"]
+ignore = ["E722"]
+
+[lint.mccabe]
+max-complexity = 25

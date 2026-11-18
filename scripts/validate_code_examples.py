@@ -25,49 +25,6 @@ class ValidationResult:
     error: str = ""
 
 
-def extract_cpp_blocks(content: str) -> List[Tuple[int, str]]:
-    blocks = []
-    lines = content.split('\n')
-    in_block = False
-    block_start = 0
-    block_lines = []
-    for i, line in enumerate(lines):
-        if line.strip().startswith('```cpp') or line.strip().startswith('```c++'):
-            if in_block:
-                logger.warning("Nested code block at line %d", i+1)
-            in_block = True
-            block_start = i + 1
-            block_lines = []
-        elif line.strip() == '```' and in_block:
-            in_block = False
-            if block_lines:
-                code = '\n'.join(block_lines)
-                blocks.append((block_start, code))
-        elif in_block:
-            block_lines.append(line)
-    return blocks
-
-
-def wrap_code_for_compilation(code: str) -> str:
-    if re.search(r'int\s+main\s*\(', code):
-        return code
-    has_fmt = 'fmt::' in code
-    has_std = 'std::' in code
-    wrapper = []
-    wrapper.append('#include <fmt/format.h>')
-    if has_fmt or has_std:
-        wrapper.append('#include <fmt/ranges.h>')
-        wrapper.append('#include <fmt/chrono.h>')
-        wrapper.append('#include <vector>')
-        wrapper.append('#include <chrono>')
-    wrapper.append('')
-    wrapper.append('int main() {')
-    wrapper.append('    ' + code.replace('\n', '\n    '))
-    wrapper.append('    return 0;')
-    wrapper.append('}')
-    return '\n'.join(wrapper)
-
-
 def compile_gpp(code: str) -> ValidationResult:
     with tempfile.NamedTemporaryFile(suffix='.cpp', mode='w', delete=False) as f:
         f.write(code)

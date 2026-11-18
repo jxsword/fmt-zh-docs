@@ -1,0 +1,9 @@
+# LLM 接入配置（DR-013，2026-11-19）
+# 仅存非敏感参数；凭据一律经环境变量 NVIDIA_API_KEY（本地）与 GitHub Secrets（CI）读取，
+# 任何源码/示例/测试不得写入凭据字面量。
+provider: nvidia
+# OpenAI 兼容端点；2026-11-19 curl 实测 HTTP 200（直连），可达性当日验证
+base_url: https://integrate.api.nvidia.com/v1
+# M3 CI 增量翻译模型（DR-012 选型：中文原生强/快/便宜/与 M2 同族术语一致）
+model: z-ai/glm-5.3-flash
+api_key_env: NVIDIA_API_KEY

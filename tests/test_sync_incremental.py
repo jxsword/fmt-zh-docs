@@ -321,12 +321,12 @@ class TestSyncSince:
         ctx, sha0 = self._init_and_mark(tmp_path, upstream)
         git("mv", "doc/guide.md", "doc/manual.md", cwd=upstream)
         git("commit", "-m", "rename", cwd=upstream)
-        r1 = sync_since(ctx, f"file://{upstream}", sha0)
+        sync_since(ctx, f"file://{upstream}", sha0)
         state1 = json.loads(ctx.state_file.read_text(encoding="utf-8"))
         assert all(s["status"] == "translated"
                    for s in state1["files"]["manual.md"]["segments"])
         # 第二次运行（模拟失败重试）
-        r2 = sync_since(ctx, f"file://{upstream}", sha0)
+        sync_since(ctx, f"file://{upstream}", sha0)
         state2 = json.loads(ctx.state_file.read_text(encoding="utf-8"))
         assert all(s["status"] == "translated"
                    for s in state2["files"]["manual.md"]["segments"])

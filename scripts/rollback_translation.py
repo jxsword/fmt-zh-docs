@@ -82,7 +82,6 @@ def list_versions(filepath: Path) -> list:
 
 
 def main():
-    import argparse
     parser = argparse.ArgumentParser(description="Rollback translation to previous version")
     parser.add_argument("--file", required=True, help="File to rollback (e.g., zh/api.md)")
     parser.add_argument("--to-version", help="Target version tag (e.g., v12.1.0)")

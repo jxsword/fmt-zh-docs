@@ -110,7 +110,9 @@ Rules:
 
 
 def translate_segment(segment: Segment, glossary: Dict[str, str], context: str = "") -> str:
-    prompt = build_prompt(segment, glossary, context)
+    # M2 为会话内 agent 翻译（DR-012），此 stub 仅验证 prompt 构建；
+    # M3 接 API 适配器时改为真实调用并使用返回值
+    _prompt = build_prompt(segment, glossary, context)
     logger.debug("Translating segment %s", segment.id)
     return f"[ZH] {segment.content}"
 

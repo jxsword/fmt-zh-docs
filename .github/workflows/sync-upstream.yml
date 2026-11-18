@@ -52,11 +52,16 @@ jobs:
         run: |
           if [ -n "${{ github.event.inputs.tag }}" ]; then
             echo "Syncing tag: ${{ github.event.inputs.tag }}"
-            python scripts/sync_docs.py --tag "${{ github.event.inputs.tag }}"
+            python scripts/sync_docs.py --tag "${{ github.event.inputs.tag }}" > sync_result.json
           else
             echo "Syncing main branch"
-            python scripts/sync_docs.py --init
+            python scripts/sync_docs.py --init > sync_result.json
           fi
+          cat sync_result.json
+          echo "commit=$(python -c "import json; print(json.load(open('sync_result.json'))['commit'])")" >> "$GITHUB_OUTPUT"
+          echo "version=$(python -c "import json; print(json.load(open('sync_result.json'))['version'])")" >> "$GITHUB_OUTPUT"
+          echo "files=$(python -c "import json; print(','.join(json.load(open('sync_result.json'))['files']))")" >> "$GITHUB_OUTPUT"
+          echo "has_changes=$(python -c "import json; print(str(json.load(open('sync_result.json'))['has_changes']).lower())")" >> "$GITHUB_OUTPUT"
 
       - name: Check for changes
         id: changes

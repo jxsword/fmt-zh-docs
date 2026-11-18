@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
 """Fix links and generate anchor mapping for translated documentation."""
 
-import hashlib
-import json
 import logging
 import re
 from pathlib import Path
-from typing import Dict, List
+from typing import Dict, List, Tuple
 
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 logger = logging.getLogger(__name__)

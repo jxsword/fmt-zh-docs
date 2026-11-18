@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Validate translation quality for fmt documentation."""
 
-import hashlib
 import json
 import logging
 import re

@@ -7,6 +7,9 @@ repo_name: "fmt-zh-docs"
 edit_uri: "edit/main/zh/"
 copyright: "基于 fmtlib/fmt 文档翻译，遵循 MIT License"
 
+# 站点内容目录：翻译文档工作区；静态资源随 zh/assets/ 提供
+docs_dir: zh
+
 theme:
   name: material
   language: zh
@@ -44,7 +47,6 @@ plugins:
         - zh
         - en
       separator: '[\s\u200b\-_,:;.!?，。！？、；：]+'
-      prebuild_index: true
   - mike:
       version_selector: true
       deploy_prefix: ''
@@ -52,7 +54,7 @@ plugins:
   - pdf-export:
       enabled: !ENV [CI, false]
       output_dir: pdf/
-      css_path: assets/pdf-export.css
+      css_path: zh/assets/pdf-export.css
   - git-revision-date-localized:
       enabled: true
       type: date

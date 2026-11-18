@@ -129,6 +129,123 @@ class TestValidateTranslation:
         assert result["errors"]
 
 
+class TestValidateHTMLTwoLevel:
+    """HTML 两级检查（按类型计数 + 配对完整性）——用户认可的放宽策略。"""
+
+    def test_reordered_tags_pass_without_warnings(self, tmp_path):
+        """语序调整导致 <b>/<code> 句内互换：必须 0 错误 0 警告。"""
+        src = tmp_path / "s.md"
+        tgt = tmp_path / "t.md"
+        src.write_text('<b>fast</b> than <code>sprintf</code> here', encoding="utf-8")
+        tgt.write_text('比 <code>sprintf</code> 更<b>快</b>的地方', encoding="utf-8")
+        result = vt.validate_file(src, tgt, {})
+        assert result["errors"] == []
+        assert result["warnings"] == []
+
+    def test_tag_type_count_mismatch_is_error(self, tmp_path):
+        src = tmp_path / "s.md"
+        tgt = tmp_path / "t.md"
+        src.write_text('<div><b>bold</b></div>', encoding="utf-8")
+        tgt.write_text('<b>bold</b>', encoding="utf-8")  # 丢了 <div>
+        result = vt.validate_file(src, tgt, {})
+        assert any("HTML tag type counts mismatch" in e for e in result["errors"])
+
+    def test_unbalanced_pairing_is_error(self, tmp_path):
+        src = tmp_path / "s.md"
+        tgt = tmp_path / "t.md"
+        src.write_text('<div><b>text</b></div>', encoding="utf-8")
+        tgt.write_text('<div><b>text</div>', encoding="utf-8")  # 交叉/缺配对
+        result = vt.validate_file(src, tgt, {})
+        assert any("unbalanced" in e for e in result["errors"])
+
+    def test_void_tags_ignored_in_pairing(self, tmp_path):
+        src = tmp_path / "s.md"
+        tgt = tmp_path / "t.md"
+        src.write_text('<p>chart <img src="perf.svg"> done</p>', encoding="utf-8")
+        tgt.write_text('<p>图表 <img src="perf.svg"> 完成</p>', encoding="utf-8")
+        result = vt.validate_file(src, tgt, {})
+        assert result["errors"] == []
+
+    def test_comments_not_counted_as_tags(self, tmp_path):
+        src = tmp_path / "s.md"
+        tgt = tmp_path / "t.md"
+        src.write_text('<!-- note -->\ntext', encoding="utf-8")
+        tgt.write_text('<!-- 注释 -->\n正文', encoding="utf-8")
+        result = vt.validate_file(src, tgt, {})
+        assert result["errors"] == []
+
+
+class TestValidatorRefinements:
+    """2026-11-19 get-started.md 校验发现的三项校验器修正。"""
+
+    def test_autolinks_not_treated_as_tags(self, tmp_path):
+        """<https://...> 自动链接不得被视为未闭合的 <https> 标签。"""
+        src = tmp_path / "s.md"
+        tgt = tmp_path / "t.md"
+        src.write_text('- <https://cppget.org/fmt/> released\n- <https://x.org> custom\n',
+                       encoding="utf-8")
+        tgt.write_text('- <https://cppget.org/fmt/>：正式版本\n- <https://x.org>：自定义\n',
+                       encoding="utf-8")
+        result = vt.validate_file(src, tgt, {})
+        assert result["errors"] == []
+
+    def test_inline_code_multiset_pass_on_reorder(self, tmp_path):
+        src = tmp_path / "s.md"
+        tgt = tmp_path / "t.md"
+        src.write_text('set `A` to `TRUE` for `B`', encoding="utf-8")
+        tgt.write_text('为 `B` 将 `A` 设为 `TRUE`', encoding="utf-8")
+        result = vt.validate_file(src, tgt, {})
+        assert result["errors"] == []
+        assert result["warnings"] == []
+
+    def test_inline_code_multiset_catches_missing_span(self, tmp_path):
+        src = tmp_path / "s.md"
+        tgt = tmp_path / "t.md"
+        src.write_text('use `fmt::format` and `FMT_STRING`', encoding="utf-8")
+        tgt.write_text('使用 `fmt::format`', encoding="utf-8")  # 丢了 FMT_STRING
+        result = vt.validate_file(src, tgt, {})
+        assert any("multiset mismatch" in e for e in result["errors"])
+
+    def test_glossary_check_ignores_code_identifiers(self, tmp_path):
+        """`src/format.cc` 之类代码标识符不得触发 'format'→'格式化' 术语误报。"""
+        src = tmp_path / "s.md"
+        tgt = tmp_path / "t.md"
+        src.write_text('compile `src/format.cc` with your code', encoding="utf-8")
+        tgt.write_text('将 `src/format.cc` 与您的代码一同编译', encoding="utf-8")
+        result = vt.validate_file(src, tgt, {"format": "格式化"})
+        assert not any("'format'" in w for w in result["warnings"])
+
+    def test_anchor_tag_with_absolute_url_pairs_correctly(self, tmp_path):
+        """回归：<a href="https://..."> 含 ：//，不得被自动链接规则误跳过
+        （曾导致其 </a> 无可配对，index.md 源文件误报不平衡）。"""
+        src = tmp_path / "s.md"
+        tgt = tmp_path / "t.md"
+        src.write_text('<p>see <a href="https://x.org/y">docs</a> and <a href="api#x">more</a></p>',
+                       encoding="utf-8")
+        tgt.write_text('<p>请参阅 <a href="https://x.org/y">文档</a>与 <a href="api#x">更多</a></p>',
+                       encoding="utf-8")
+        result = vt.validate_file(src, tgt, {})
+        assert result["errors"] == []
+
+    def test_indented_code_placeholders_ignored(self, tmp_path):
+        """缩进式代码块中的 <your-target> 不得被判为未闭合 HTML 标签。"""
+        src = tmp_path / "s.md"
+        tgt = tmp_path / "t.md"
+        block = "    target_link_libraries(<your-target> fmt::fmt)\n\n    find_package(fmt)\n"
+        src.write_text(block, encoding="utf-8")
+        tgt.write_text(block, encoding="utf-8")
+        result = vt.validate_file(src, tgt, {})
+        assert result["errors"] == []
+
+    def test_glossary_check_still_matches_prose(self, tmp_path):
+        src = tmp_path / "s.md"
+        tgt = tmp_path / "t.md"
+        src.write_text('A format string is checked at compile time.', encoding="utf-8")
+        tgt.write_text('格式字符串会在编译时被检查。', encoding="utf-8")
+        result = vt.validate_file(src, tgt, {"format string": "格式字符串"})
+        assert result["warnings"] == []
+
+
 class TestStateRoundtrip:
     def test_state_file_matches_real_segment_count(self):
         """真实状态文件与分段函数输出一致性（防状态漂移）。"""
@@ -141,12 +258,14 @@ class TestStateRoundtrip:
         total = sum(len(f["segments"]) for f in state["files"].values())
         assert total == 1117
 
-    def test_all_segments_have_status_pending_or_absent(self):
+    def test_all_segments_have_known_status(self):
+        """状态字段只允许流水线已定义的值，防止脏数据混入。"""
         state_file = REPO_ROOT / ".translation-state.json"
         if not state_file.exists():
             pytest.skip(".translation-state.json not generated yet")
+        known = {"pending", "translated", "failed", "reviewed"}
         state = json.loads(state_file.read_text(encoding="utf-8"))
         for fn, fs in state["files"].items():
             for seg in fs["segments"]:
                 status = seg.get("status", "pending")
-                assert status == "pending", f"{fn}/{seg['id']} unexpected status {status}"
+                assert status in known, f"{fn}/{seg['id']} unexpected status {status}"

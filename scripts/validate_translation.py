@@ -68,6 +68,75 @@ def extract_urls(content: str) -> List[str]:
     return re.findall(pattern, content)
 
 
+# HTML 两级检查的辅助结构（DR-013 认可的放宽策略：
+# 严格顺序对比已移除——翻译语序调整导致 <b>/<code> 句内互换属正常现象）
+VOID_TAGS = {'img', 'br', 'hr', 'input', 'meta', 'link', 'area', 'base',
+             'col', 'embed', 'source', 'track', 'wbr'}
+
+
+# markdown 自动链接：<scheme://...> 形式（scheme 后紧跟 ://，中间无空格/属性）。
+# 注意不能用"含 ://"粗判——<a href="https://..."> 是合法锚点标签，URL 同样含 ://
+AUTOLINK_PATTERN = re.compile(r'^<[a-zA-Z][a-zA-Z0-9+.-]*://')
+
+
+def normalize_tag(tag: str):
+    """Normalize an HTML tag string to (tag_name, is_closing).
+
+    Returns None for non-tag tokens: comments (`<!...`) and markdown autolinks
+    (`<https://...>`) — the latter would otherwise be mistaken for an
+    unclosed `<https>` tag and break pairing checks.
+    """
+    if AUTOLINK_PATTERN.match(tag):
+        return None
+    m = re.match(r'^</?\s*([a-zA-Z][a-zA-Z0-9-]*)', tag)
+    if not m:
+        return None
+    return (m.group(1).lower(), tag.startswith('</'))
+
+
+def strip_code(content: str) -> str:
+    """Remove code so structural checks operate on prose only:
+    - fenced code blocks and inline code spans;
+    - indented code blocks (lines starting with >= 4 spaces — the corpus
+      convention; list continuation prose uses 2 spaces).
+    Prevents tokens like <your-target> or `src/format.cc` from triggering
+    HTML-tag / glossary false positives."""
+    content = re.sub(r'```[\s\S]*?```', ' ', content)
+    content = re.sub(r'`[^`\n]+`', ' ', content)
+    content = re.sub(r'^ {4,}\S.*$', ' ', content, flags=re.MULTILINE)
+    return content
+
+
+def tag_type_counts(tags: List[str]) -> Dict:
+    """Multiset of (tag_name, is_closing) — any add/remove of a tag type is structural damage."""
+    counts = {}
+    for t in tags:
+        norm = normalize_tag(t)
+        if norm is None:
+            continue
+        counts[norm] = counts.get(norm, 0) + 1
+    return counts
+
+
+def check_pairing(tags: List[str]) -> bool:
+    """Stack-based pairing check on target tags; void tags and comments ignored."""
+    stack = []
+    for t in tags:
+        norm = normalize_tag(t)
+        if norm is None:
+            continue
+        name, closing = norm
+        if name in VOID_TAGS:
+            continue
+        if closing:
+            if not stack or stack[-1] != name:
+                return False
+            stack.pop()
+        else:
+            stack.append(name)
+    return not stack
+
+
 def validate_file(source_path: Path, target_path: Path, glossary: Dict[str, str]) -> Dict:
     """Validate a single translated file."""
     errors = []
@@ -94,25 +163,43 @@ def validate_file(source_path: Path, target_path: Path, glossary: Dict[str, str]
             if src != tgt:
                 errors.append(f"Code block {i} modified in translation")
     
-    # 2. Inline code integrity
+    # 2. Inline code integrity — multiset 计数（与 HTML 两级检查同一原则：
+    #    语序调整导致句内顺序互换属正常翻译现象，计数一致即结构无损）
     source_inline = extract_inline_code(source_content)
     target_inline = extract_inline_code(target_content)
-    if len(source_inline) != len(target_inline):
-        warnings.append(f"Inline code count mismatch: source={len(source_inline)}, target={len(target_inline)}")
-    else:
-        for i, (src, tgt) in enumerate(zip(source_inline, target_inline)):
-            if src != tgt:
-                warnings.append(f"Inline code {i} modified: {src} -> {tgt}")
+    src_counts = {}
+    tgt_counts = {}
+    for t in source_inline:
+        src_counts[t] = src_counts.get(t, 0) + 1
+    for t in target_inline:
+        tgt_counts[t] = tgt_counts.get(t, 0) + 1
+    if src_counts != tgt_counts:
+        diff_parts = []
+        for key in sorted(set(src_counts) | set(tgt_counts)):
+            s, t = src_counts.get(key, 0), tgt_counts.get(key, 0)
+            if s != t:
+                diff_parts.append(f"{key}:{s}->{t}")
+        errors.append("Inline code multiset mismatch (missing/extra/modified spans): " + ", ".join(diff_parts))
     
-    # 3. HTML tag integrity
-    source_html = extract_html_tags(source_content)
-    target_html = extract_html_tags(target_content)
-    if len(source_html) != len(target_html):
-        warnings.append(f"HTML tag count mismatch: source={len(source_html)}, target={len(target_html)}")
-    else:
-        for i, (src, tgt) in enumerate(zip(source_html, target_html)):
-            if src != tgt:
-                warnings.append(f"HTML tag {i} modified: {src} -> {tgt}")
+    # 3. HTML tag integrity — 两级检查（用户已认可，2026-11-19）
+    #   L1(error): 按类型 multiset 计数对比，任何标签类型增删=结构破坏
+    #   L2(error): 译文标签配对完整性（栈配对，忽略 void/注释）
+    #   严格顺序对比已移除（语序调整属正常翻译现象）
+    #   检查前剥离代码（含缩进式代码块），避免 <your-target> 等占位符误报
+    source_html = extract_html_tags(strip_code(source_content))
+    target_html = extract_html_tags(strip_code(target_content))
+    src_counts = tag_type_counts(source_html)
+    tgt_counts = tag_type_counts(target_html)
+    if src_counts != tgt_counts:
+        diff_parts = []
+        for key in sorted(set(src_counts) | set(tgt_counts)):
+            s, t = src_counts.get(key, 0), tgt_counts.get(key, 0)
+            if s != t:
+                kind = "close" if key[1] else "open"
+                diff_parts.append(f"<{key[0]} {kind}>:{s}->{t}")
+        errors.append("HTML tag type counts mismatch: " + ", ".join(diff_parts))
+    if target_html and not check_pairing(target_html):
+        errors.append("Translated HTML tags are unbalanced or improperly nested")
     
     # 4. URL integrity
     source_urls = extract_urls(source_content)
@@ -125,8 +212,11 @@ def validate_file(source_path: Path, target_path: Path, glossary: Dict[str, str]
                 warnings.append(f"URL {i} modified: {src} -> {tgt}")
     
     # 5. Glossary terminology consistency
+    #    在剥离代码后的正文上匹配英文术语，避免 `src/format.cc` 之类
+    #    标识符触发子串误报
+    source_prose = strip_code(source_content)
     for en_term, zh_term in glossary.items():
-        if en_term in source_content:
+        if en_term in source_prose:
             if zh_term not in target_content:
                 warnings.append(f"Glossary term '{en_term}' not translated as '{zh_term}'")
     

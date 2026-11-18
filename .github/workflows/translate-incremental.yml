@@ -50,32 +50,40 @@ jobs:
       - name: Identify pending translations
         id: pending
         run: |
-          python -c "
-import json, sys
-state_file = '.translation-state.json'
-with open(state_file) as f:
-    state = json.load(f)
+          python - <<'PYEOF'
+          import json, os
+          state_file = '.translation-state.json'
+          with open(state_file) as f:
+              state = json.load(f)
 
-pending = []
-for fname, fstate in state.get('files', {}).items():
-    for seg in fstate.get('segments', []):
-        if seg.get('type') != 'code_block' and seg.get('status') == 'pending':
-            pending.append({'file': fname, 'segment_id': seg['id']})
+          pending = []
+          for fname, fstate in state.get('files', {}).items():
+              for seg in fstate.get('segments', []):
+                  if seg.get('type') != 'code_block' and seg.get('status') == 'pending':
+                      pending.append({'file': fname, 'segment_id': seg['id']})
 
-print(f'pending_count={len(pending)}')
-print(f'pending_files={list(set(p[\"file\"] for p in pending))}')
-with open('pending.json', 'w') as f:
-    json.dump(pending, f)
-          "
+          print(f'pending_count={len(pending)}')
+          print(f'pending_files={sorted(set(p["file"] for p in pending))}')
+          with open('pending.json', 'w') as f:
+              json.dump(pending, f)
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+              f.write(f'pending_count={len(pending)}\n')
+              f.write(f'pending_files={",".join(sorted(set(p["file"] for p in pending)))}\n')
+          PYEOF
 
       - name: Translate pending segments
         if: steps.pending.outputs.pending_count != '0'
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
           GLOSSARY_PATH: config/glossary.yml
         run: |
+          # DR-012/013：M3 起经英伟达 provider（OpenAI 兼容）调用，key 只走 Secrets；
+          # key 未配置时显式失败，防止 stub 翻译内容被误提交进 PR
+          if [ -z "$NVIDIA_API_KEY" ]; then
+            echo "::error::NVIDIA_API_KEY secret 未配置，跳过自动翻译（请在仓库 Settings → Secrets 配置）"
+            exit 1
+          fi
           python scripts/translate_batch.py --all
-          # 实际使用时替换为真实的 LLM 调用
 
       - name: Validate translations
         if: steps.pending.outputs.pending_count != '0'

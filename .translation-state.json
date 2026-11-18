@@ -1093,8 +1093,11 @@
           "line_start": 1,
           "line_end": 5,
           "metadata": {
-            "section": ""
-          }
+            "section": "",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "index.md-h1-0",
@@ -1106,8 +1109,11 @@
           "line_end": 7,
           "metadata": {
             "level": 1,
-            "title": "A modern formatting library"
-          }
+            "title": "A modern formatting library",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "index.md-html-0",
@@ -1118,8 +1124,11 @@
           "line_start": 9,
           "line_end": 9,
           "metadata": {
-            "section": "A modern formatting library"
-          }
+            "section": "A modern formatting library",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "index.md-html-1",
@@ -1130,8 +1139,11 @@
           "line_start": 11,
           "line_end": 17,
           "metadata": {
-            "section": "A modern formatting library"
-          }
+            "section": "A modern formatting library",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "index.md-html-2",
@@ -1142,8 +1154,11 @@
           "line_start": 19,
           "line_end": 20,
           "metadata": {
-            "section": "A modern formatting library"
-          }
+            "section": "A modern formatting library",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "index.md-p-3",
@@ -1154,8 +1169,11 @@
           "line_start": 22,
           "line_end": 23,
           "metadata": {
-            "section": "A modern formatting library"
-          }
+            "section": "A modern formatting library",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "index.md-html-4",
@@ -1166,8 +1184,11 @@
           "line_start": 24,
           "line_end": 28,
           "metadata": {
-            "section": "A modern formatting library"
-          }
+            "section": "A modern formatting library",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "index.md-html-5",
@@ -1178,8 +1199,11 @@
           "line_start": 30,
           "line_end": 34,
           "metadata": {
-            "section": "A modern formatting library"
-          }
+            "section": "A modern formatting library",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "index.md-html-6",
@@ -1190,8 +1214,11 @@
           "line_start": 36,
           "line_end": 37,
           "metadata": {
-            "section": "A modern formatting library"
-          }
+            "section": "A modern formatting library",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "index.md-p-7",
@@ -1202,8 +1229,11 @@
           "line_start": 39,
           "line_end": 39,
           "metadata": {
-            "section": "A modern formatting library"
-          }
+            "section": "A modern formatting library",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "index.md-html-8",
@@ -1214,8 +1244,11 @@
           "line_start": 41,
           "line_end": 41,
           "metadata": {
-            "section": "A modern formatting library"
-          }
+            "section": "A modern formatting library",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "index.md-p-9",
@@ -1226,8 +1259,11 @@
           "line_start": 43,
           "line_end": 44,
           "metadata": {
-            "section": "A modern formatting library"
-          }
+            "section": "A modern formatting library",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "index.md-html-10",
@@ -1238,8 +1274,11 @@
           "line_start": 45,
           "line_end": 47,
           "metadata": {
-            "section": "A modern formatting library"
-          }
+            "section": "A modern formatting library",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "index.md-html-11",
@@ -1250,8 +1289,11 @@
           "line_start": 49,
           "line_end": 53,
           "metadata": {
-            "section": "A modern formatting library"
-          }
+            "section": "A modern formatting library",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "index.md-html-12",
@@ -1262,8 +1304,11 @@
           "line_start": 55,
           "line_end": 57,
           "metadata": {
-            "section": "A modern formatting library"
-          }
+            "section": "A modern formatting library",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "index.md-p-13",
@@ -1274,8 +1319,11 @@
           "line_start": 59,
           "line_end": 59,
           "metadata": {
-            "section": "A modern formatting library"
-          }
+            "section": "A modern formatting library",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "index.md-html-14",
@@ -1286,8 +1334,11 @@
           "line_start": 60,
           "line_end": 62,
           "metadata": {
-            "section": "A modern formatting library"
-          }
+            "section": "A modern formatting library",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "index.md-html-15",
@@ -1298,8 +1349,11 @@
           "line_start": 64,
           "line_end": 68,
           "metadata": {
-            "section": "A modern formatting library"
-          }
+            "section": "A modern formatting library",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "index.md-html-16",
@@ -1310,8 +1364,11 @@
           "line_start": 70,
           "line_end": 71,
           "metadata": {
-            "section": "A modern formatting library"
-          }
+            "section": "A modern formatting library",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "index.md-p-17",
@@ -1322,8 +1379,11 @@
           "line_start": 73,
           "line_end": 74,
           "metadata": {
-            "section": "A modern formatting library"
-          }
+            "section": "A modern formatting library",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "index.md-html-18",
@@ -1334,8 +1394,11 @@
           "line_start": 75,
           "line_end": 81,
           "metadata": {
-            "section": "A modern formatting library"
-          }
+            "section": "A modern formatting library",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "index.md-html-19",
@@ -1346,8 +1409,11 @@
           "line_start": 83,
           "line_end": 99,
           "metadata": {
-            "section": "A modern formatting library"
-          }
+            "section": "A modern formatting library",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "index.md-html-20",
@@ -1358,8 +1424,11 @@
           "line_start": 101,
           "line_end": 115,
           "metadata": {
-            "section": "A modern formatting library"
-          }
+            "section": "A modern formatting library",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "index.md-html-21",
@@ -1370,8 +1439,11 @@
           "line_start": 117,
           "line_end": 133,
           "metadata": {
-            "section": "A modern formatting library"
-          }
+            "section": "A modern formatting library",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "index.md-html-22",
@@ -1382,8 +1454,11 @@
           "line_start": 135,
           "line_end": 148,
           "metadata": {
-            "section": "A modern formatting library"
-          }
+            "section": "A modern formatting library",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "index.md-html-23",
@@ -1394,8 +1469,11 @@
           "line_start": 150,
           "line_end": 150,
           "metadata": {
-            "section": "A modern formatting library"
-          }
+            "section": "A modern formatting library",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         }
       ]
     },

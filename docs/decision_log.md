@@ -157,5 +157,20 @@
 
 ---
 
+## DR-012 2026-11-19 M1 后执行顺序与翻译引擎选型 [状态: 生效]
+
+- **背景**: M1 基础设施完成（commit 8b06bf4），后续三方向 A(补同步 CLI)/B(翻译闭环)/C(推远程验 CI) 需排序；LLM 接入方式需确定
+- **选项与权衡**:
+  - 顺序A先行(C最后倒序): A→B→C（先补地基；缺点：最大未知数 B 悬置过久）弃用
+  - 顺序B→A→C: 先打最不确定的假设（翻译质量决定多处设计是否返工），C 最后避免对半成品两轮 CI 验证 ← **选中**
+  - 翻译引擎: M2 用脚本直调 API（需另购 key，阻塞启动）弃用；M2 用会话内 agent 翻译（零 key、消耗既有套餐，即最初"利用 agent 翻译"本意）← **选中**
+  - M3 CI 增量翻译模型（英伟达 provider，同 key 通用）: nemotron-3-ultra-550b(质量最高但慢贵，翻译过配)弃用；kimi-k3.1-pro(中文好但比 flash 贵一档)备选；glm-5.3-flash(中文原生强/快/便宜/与 M2 同族术语一致) ← **选中**
+- **结论**: 执行顺序 B→A→C；M2 全量翻译走会话内 agent（无需任何 API key）；M3 CI 用英伟达 provider `z-ai/glm-5.3-flash`（OpenAI 兼容接口，key 同时配 ZCode 与 GitHub Secrets）；nemotron-3-ultra 保留为 M2/M4 难句质量升级路径
+- **理由**: 先消解最大风险；flash 档 + 校验流水线兜底对有界翻译任务足够；同族模型降低 M2/M3 术语行为漂移
+- **影响**: scripts/translate_batch.py（M3 才接 API 适配器）；zh/ 全部翻译产出方式；.github/workflows/translate-incremental.yml 的 Secrets 约定（英伟达 key）
+- **记录时间 / 会话**: 2026-11-19 / fmt-zh-docs 主会话
+
+---
+
 *记录时间：2026-11-19*  
-*下一编号：DR-012*
+*下一编号：DR-013*

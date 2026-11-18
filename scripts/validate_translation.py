@@ -144,14 +144,27 @@ def validate_file(source_path: Path, target_path: Path, glossary: Dict[str, str]
 
 
 def main():
+    import argparse
+    parser = argparse.ArgumentParser(description="Validate translation quality")
+    parser.add_argument("--file", default=None,
+                        help="只校验指定文件（如 index.md）；缺省校验全部")
+    args = parser.parse_args()
+
     state = load_state()
     glossary = load_glossary()
     logger.info("Loaded %d glossary terms", len(glossary))
-    
+
     all_errors = []
     all_warnings = []
-    
-    for fname in state.get('files', {}).keys():
+
+    targets = state.get('files', {}).keys()
+    if args.file:
+        if args.file not in state.get('files', {}):
+            logger.error("File not in translation state: %s", args.file)
+            sys.exit(2)
+        targets = [args.file]
+
+    for fname in targets:
         source_path = SOURCE_DIR / fname
         target_path = ZH_DIR / fname
         logger.info("Validating %s", fname)

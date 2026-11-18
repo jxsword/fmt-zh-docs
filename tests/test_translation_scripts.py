@@ -306,11 +306,14 @@ class TestStateRoundtrip:
         assert total == 1117
 
     def test_all_segments_have_known_status(self):
-        """状态字段只允许流水线已定义的值，防止脏数据混入。"""
+        """状态字段只允许流水线已定义的值，防止脏数据混入。
+
+        skipped：DR-014（2026-11-19）ChangeLog-old.md 不翻译，段落永久跳过。
+        """
         state_file = REPO_ROOT / ".translation-state.json"
         if not state_file.exists():
             pytest.skip(".translation-state.json not generated yet")
-        known = {"pending", "translated", "failed", "reviewed"}
+        known = {"pending", "translated", "failed", "reviewed", "skipped"}
         state = json.loads(state_file.read_text(encoding="utf-8"))
         for fn, fs in state["files"].items():
             for seg in fs["segments"]:

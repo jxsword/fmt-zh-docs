@@ -19,7 +19,7 @@
 | T-011 | api.md | OS~OStream API | ~20 | 中 | 待认领 | - | 系统/流 API |
 | T-012 | api.md | Args~XChar API | ~15 | 中 | 待认领 | - | 动态参数/宽字符 |
 | T-013 | api.md | C++20 兼容~配置选项 | ~20 | 低 | 待认领 | - | 兼容性/配置 |
-| T-014 | ChangeLog-old.md | 全文 | ~10 | 低 | 待认领 | - | 可选翻译 |
+| T-014 | ChangeLog-old.md | 全文 | ~10 | 低 | 已关闭 | - | DR-014 决策不翻译，保留英文原文占位页 |
 
 ## 进行中
 
@@ -65,5 +65,5 @@
 
 ---
 
-*看板更新时间：2026-11-18*  
+*看板更新时间：2026-11-19（T-014 按 DR-014 关闭）*  
 *建议使用 [GitHub Projects](https://github.com/your-org/fmt-zh-docs/projects) 进行可视化管理*

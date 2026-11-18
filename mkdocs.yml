@@ -118,7 +118,8 @@ nav:
   - 快速开始: get-started.md
   - 格式语法: syntax.md
   - API 参考: api.md
-  - 更新日志: ChangeLog-old.md
+  # DR-014：历史变更日志不翻译，保留英文原文占位页
+  - 更新日志（英文原文）: ChangeLog-old.md
 
 # 版本配置（由 mike 管理）
 # 部署时运行: mike deploy --push --update-aliases latest 12.2

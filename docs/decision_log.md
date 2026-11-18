@@ -184,7 +184,19 @@
 - **影响**: scripts/translate_batch.py（M3 适配器）；.github/workflows/translate-incremental.yml；config/llm.yml；.gitignore
 - **记录时间 / 会话**: 2026-11-19 / fmt-zh-docs 主会话
 
+## DR-014 2026-11-19 ChangeLog-old.md 不翻译 [状态: 生效]（补写）
+
+- **背景**: M2 全量翻译收尾评审翻译覆盖范围；ChangeLog-old.md 为 670 段/112KB 的历史变更日志（记录 1.x~7.x 时代 API），用户已确认不翻译，本条为决策落档补写
+- **选项与权衡**:
+  - 方案A: 全文翻译（优点：覆盖完整；缺点：历史日志中文查阅价值低，670 段翻译与后续每版增量维护成本高）弃用
+  - 方案B: 不翻译，zh/ 保留英文占位页标注"英文原文"并链接上游，nav 同步标注，state 段落标记 skipped 豁免校验与 CI 翻译 ← **选中**
+  - 方案C: 不翻译且从站点 nav 移除仅外链上游（优点：零维护；缺点：站点内断航、占位页成孤儿页）弃用
+- **结论**: ChangeLog-old.md 不翻译；zh/ChangeLog-old.md 为英文原文占位页，mkdocs nav 标注"更新日志（英文原文）"；.translation-state.json 该文件段落标记 `status: skipped`、文件级 `excluded: true`，校验器与 CI 翻译跳过
+- **理由**: 历史变更日志翻译投入产出比低；保留站内页面避免孤儿页与断航，导航标注保证读者预期明确
+- **影响**: zh/ChangeLog-old.md、mkdocs.yml nav、docs/translation-board.md（T-014 关闭）、validate_translation.py（豁免逻辑）、翻译覆盖率统计口径（分母改为 447 段可翻译段落）
+- **记录时间 / 会话**: 2026-11-19（补写于 M2 收尾会话）
+
 ---
 
 *记录时间：2026-11-19*  
-*下一编号：DR-014*
+*下一编号：DR-015*

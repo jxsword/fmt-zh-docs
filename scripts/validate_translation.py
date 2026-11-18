@@ -279,6 +279,11 @@ def main():
         targets = [args.file]
 
     for fname in targets:
+        if state.get('files', {}).get(fname, {}).get('excluded'):
+            # DR-014：excluded 文件（如 ChangeLog-old.md 历史变更日志）不翻译，
+            # zh/ 仅有占位页，与 source 全量对比必然报错，故跳过校验
+            logger.info("Skipping %s (excluded from translation, DR-014)", fname)
+            continue
         source_path = SOURCE_DIR / fname
         target_path = ZH_DIR / fname
         logger.info("Validating %s", fname)

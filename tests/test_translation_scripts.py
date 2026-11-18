@@ -237,6 +237,27 @@ class TestValidatorRefinements:
         result = vt.validate_file(src, tgt, {})
         assert result["errors"] == []
 
+    def test_glossary_check_ignores_urls(self, tmp_path):
+        """回归：URL 中的路径段（如 .../chrono/duration）不得触发术语误报。"""
+        src = tmp_path / "s.md"
+        tgt = tmp_path / "t.md"
+        src.write_text('formatter for [`std::chrono::duration`](https://en.cppreference.com/w/cpp/chrono/duration)',
+                       encoding="utf-8")
+        tgt.write_text('[`std::chrono::duration`](https://en.cppreference.com/w/cpp/chrono/duration) 的格式化器',
+                       encoding="utf-8")
+        result = vt.validate_file(src, tgt, {"duration": "时长"})
+        assert not any("'duration'" in w for w in result["warnings"])
+
+    def test_mkdocstrings_directives_ignored(self, tmp_path):
+        """::: 指令行中的 <T...> 不得被当作 HTML 标签（api.md 语料）。"""
+        src = tmp_path / "s.md"
+        tgt = tmp_path / "t.md"
+        directive = "::: print(format_string<T...>, T&&...)\n\n::: format_to_n(OutputIt, size_t, format_string<T...>, T&&...)\n"
+        src.write_text("prose text\n\n" + directive, encoding="utf-8")
+        tgt.write_text("正文\n\n" + directive, encoding="utf-8")
+        result = vt.validate_file(src, tgt, {})
+        assert result["errors"] == []
+
     def test_pre_block_indented_lines_survive_strip(self, tmp_path):
         """回归：语法块内部 ≥4 空格缩进的续行（如语法文法）是真实内容，
         不得被缩进代码块启发式剔除——曾导致 </code> 消失、配对失败。"""

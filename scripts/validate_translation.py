@@ -109,6 +109,11 @@ def strip_code(content: str) -> str:
     out = []
     in_pre = False
     for line in lines:
+        # mkdocstrings 指令行（如 ::: print(format_string<T...>, T&&...)）
+        # 是文档 DSL 而非散文；其 <T...> 会干扰 HTML 标签检查，两侧均剥离
+        if line.lstrip().startswith(':::'):
+            out.append(' ')
+            continue
         low = line.lower()
         if in_pre:
             if '</pre' in low:
@@ -231,9 +236,9 @@ def validate_file(source_path: Path, target_path: Path, glossary: Dict[str, str]
                 warnings.append(f"URL {i} modified: {src} -> {tgt}")
     
     # 5. Glossary terminology consistency
-    #    在剥离代码后的正文上匹配英文术语，避免 `src/format.cc` 之类
-    #    标识符触发子串误报
-    source_prose = strip_code(source_content)
+    #    在剥离代码与 URL 后的正文上匹配英文术语，避免 `src/format.cc`
+    #    标识符与 cppreference 链接（如 .../chrono/duration）触发子串误报
+    source_prose = re.sub(r'https?://\S+', ' ', strip_code(source_content))
     for en_term, zh_term in glossary.items():
         if en_term in source_prose:
             if zh_term not in target_content:

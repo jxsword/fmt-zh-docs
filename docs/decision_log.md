@@ -172,5 +172,19 @@
 
 ---
 
+## DR-013 2026-11-19 LLM 凭据与配置管理约定 [状态: 生效]
+
+- **背景**: M3 需脚本/CI 直调 LLM（英伟达 provider），凭据存放位置与读取方式需约定；用户确认不提供正文粘贴 key
+- **选项与权衡**:
+  - 方案A: key 写入 config/ 入库文件（方便；缺点：泄露面大）弃用
+  - 方案B: key 从对话正文获取（无需文件；缺点：聊天记录即泄露面）弃用
+  - 方案C: key 只从环境变量（本地）与 GitHub Secrets（CI）读取；config/llm.yml 仅存非敏感参数（base_url/模型名/环境变量名），.env 入 .gitignore ← **选中**
+- **结论**: 环境变量统一命名 `NVIDIA_API_KEY`（本地 export 或写 .env，后者已 gitignore）；CI 用 GitHub Secrets 同名配置；`config/llm.yml`（M3 创建）只存 provider/base_url/model/api_key_env 等非敏感项；任何源码/示例/测试不得出现凭据字面量
+- **理由**: 凭据不经过对话与版本库两条泄露面；同名约定让本地与 CI 行为一致
+- **影响**: scripts/translate_batch.py（M3 适配器）；.github/workflows/translate-incremental.yml；config/llm.yml；.gitignore
+- **记录时间 / 会话**: 2026-11-19 / fmt-zh-docs 主会话
+
+---
+
 *记录时间：2026-11-19*  
-*下一编号：DR-013*
+*下一编号：DR-014*

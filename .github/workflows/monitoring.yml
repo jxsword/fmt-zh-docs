@@ -63,7 +63,8 @@ jobs:
           PYEOF
 
       - name: Alert on stale translation
-        if: steps.freshness.outputs.stale == 'true' && steps.freshness.outputs.days_since_update|int >= 14
+        # GitHub 表达式无 Jinja 管道转换：字符串与数字比较依赖其弱类型强制（NaN 比较 false）
+        if: steps.freshness.outputs.stale == 'true' && steps.freshness.outputs.days_since_update >= 14
         uses: actions/github-script@v7
         with:
           script: |
@@ -119,7 +120,7 @@ jobs:
           echo "terminology_consistency=99" >> $GITHUB_OUTPUT
 
       - name: Alert on quality drop
-        if: steps.metrics.outputs.terminology_consistency|int < 95
+        if: steps.metrics.outputs.terminology_consistency < 95
         uses: actions/github-script@v7
         with:
           script: |

@@ -1,0 +1,1630 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="{fmt} 库官方文档中文翻译版">
+      
+      
+        <meta name="author" content="fmt 中文文档翻译组">
+      
+      
+        <link rel="canonical" href="https://fmt-zh.example.com/latest/syntax/">
+      
+      
+        <link rel="prev" href="../get-started/">
+      
+      
+        <link rel="next" href="../api/">
+      
+      
+        
+          <link rel="alternate" href="https://fmt.dev/latest/" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+    
+    
+      
+        <title>格式语法 - fmt 中文文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans SC";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/css/custom.css">
+    
+      <link rel="stylesheet" href="../assets/css/bilingual.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-XXXXXXXXXX"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-XXXXXXXXXX",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="fmt 中文文档" class="md-header__button md-logo" aria-label="fmt 中文文档" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            fmt 中文文档
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              格式语法
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="选择当前语言">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="https://fmt.dev/latest/" hreflang="en" class="md-select__link">
+              English (Original)
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/your-org/fmt-zh-docs" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    fmt-zh-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../get-started/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  快速开始
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  格式语法
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../api/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  API 参考
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ChangeLog-old/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  更新日志（英文原文）
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="fmt 中文文档" class="md-nav__button md-logo" aria-label="fmt 中文文档" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    fmt 中文文档
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/your-org/fmt-zh-docs" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    fmt-zh-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../get-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    快速开始
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    格式语法
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    格式语法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        格式规范
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="格式规范">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        填充与对齐
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        符号
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        替代形式（#）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        零填充（0）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        宽度
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        精度
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#l" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        区域设置（L）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        呈现类型
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        时间日期格式规范
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        范围格式规范
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        组合示例
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API 参考
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ChangeLog-old/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    更新日志（英文原文）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset"><a class="md-content__button md-icon" download href="syntax.pdf" title="PDF Export"><svg style="height: 1.2rem; width: 1.2rem;" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm76.45 211.36l-96.42 95.7c-6.65 6.61-17.39 6.61-24.04 0l-96.42-95.7C73.42 337.29 80.54 320 94.82 320H160v-80c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v80h65.18c14.28 0 21.4 17.29 11.27 27.36zM377 105L279.1 7c-4.5-4.5-10.6-7-17-7H256v128h128v-6.1c0-6.3-2.5-12.4-7-16.9z"></path></svg></a>
+                
+                  
+
+
+  
+  
+
+
+<h1 id="_1">格式字符串语法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>本库的格式化函数——最主要的是
+<a href="../api/#format"><code>fmt::format</code></a> 与 <a href="../api/#print"><code>fmt::print</code></a>——接受
+按本文所述语法编写的格式字符串。</p>
+<p>格式字符串是嵌入了<em>替换字段</em>的纯文本，替换字段由花括号 <code>{</code> 和 <code>}</code>
+界定。替换字段之外的字符将原样复制到输出。若要输出字面花括号，请将其
+双写：<code>{{</code> 会在输出中产生单个 <code>{</code>，<code>}}</code> 会产生单个 <code>}</code>。</p>
+<p>替换字段由下述文法描述。</p>
+<p><a id="replacement-field"></a></p>
+<pre><code class="language-json"
+>replacement_field ::= "{" [arg_id] [":" (<a href="#format-spec"
+  >format_spec</a> | <a href="#chrono-format-spec">chrono_format_spec</a>)] "}"
+arg_id            ::= integer | identifier
+integer           ::= digit+
+digit             ::= "0"..."9"
+identifier        ::= id_start id_continue*
+id_start          ::= "a"..."z" | "A"..."Z" | "_"
+id_continue       ::= id_start | digit</code>
+</pre>
+
+<p><em>arg_id</em> 选择要格式化的参数。它可以是非负整数（位置引用），
+也可以是与通过 <a href="../api/#arg"><code>fmt::arg</code></a> 传入的参数名相匹配的
+标识符（命名引用）。省略 <em>arg_id</em> 时，参数按从左到右的顺序依次消耗；
+这种<em>自动</em>索引必须在整条格式字符串中统一使用——混用自动索引与显式
+数字索引将导致编译时错误（或在运行时抛出 <code>format_error</code>）。</p>
+<p><em>format_spec</em> 以 <code>:</code> 引入，描述值应如何呈现。其文法与类型相关；
+标准内置类型所用形式见下一节。</p>
+<p>例如：</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">fmt</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">"hello, {}"</span><span class="p">,</span><span class="w"> </span><span class="s">"world"</span><span class="p">);</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">// Result: "hello, world"</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">fmt</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">"{1}, {0}!"</span><span class="p">,</span><span class="w"> </span><span class="s">"world"</span><span class="p">,</span><span class="w"> </span><span class="s">"hello"</span><span class="p">);</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1">// Result: "hello, world!"</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">fmt</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">"{greeting}, {name}!"</span><span class="p">,</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">            </span><span class="n">fmt</span><span class="o">::</span><span class="n">arg</span><span class="p">(</span><span class="s">"greeting"</span><span class="p">,</span><span class="w"> </span><span class="s">"hi"</span><span class="p">),</span><span class="w"> </span><span class="n">fmt</span><span class="o">::</span><span class="n">arg</span><span class="p">(</span><span class="s">"name"</span><span class="p">,</span><span class="w"> </span><span class="s">"fmt"</span><span class="p">));</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1">// Result: "hi, fmt!"</span>
+</span></code></pre></div>
+<p><em>format_spec</em> 中的 <em>width</em> 或 <em>precision</em> 本身也可写成嵌套替换字段——
+<code>{}</code> 或 <code>{arg_id}</code>——此时其取值来自运行时的一个整数参数。
+嵌套字段只接受 <em>arg_id</em>；其自身不能再包含 <em>format_spec</em>。</p>
+<h2 id="_2">格式规范<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>下述文法描述了内置类型——整数、浮点值、字符、字符串、布尔值与
+指针——所共享的 <em>format_spec</em>，同样适用于任何其 <code>formatter</code> 复用
+fmt 解析器的用户定义类型。</p>
+<p><a id="format-spec"></a></p>
+<pre><code class="language-json"
+>format_spec ::= [[fill]align][sign]["#"]["0"][width]["." precision]["L"][type]
+fill        ::= &lt;a character other than '{' or '}'>
+align       ::= "<" | ">" | "^"
+sign        ::= "+" | "-" | " "
+width       ::= <a href="#replacement-field">integer</a> | "{" [<a
+  href="#replacement-field">arg_id</a>] "}"
+precision   ::= <a href="#replacement-field">integer</a> | "{" [<a
+  href="#replacement-field">arg_id</a>] "}"
+type        ::= "a" | "A" | "b" | "B" | "c" | "d" | "e" | "E" | "f" | "F" |
+                "g" | "G" | "o" | "p" | "s" | "x" | "X" | "?"</code>
+</pre>
+
+<p>某个选项是否有意义取决于被格式化的值；不适用于该值类型的选项
+会在可能时于编译期诊断，否则抛出 <code>format_error</code>。</p>
+<h3 id="_3">填充与对齐<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p><em>align</em> 字段决定当 <em>width</em> 使字段宽于值的自然渲染宽度时，
+填充应放置在何处。</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;</code></td>
+<td>左对齐；在右侧填充。非数值类型的默认值。</td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td>右对齐；在左侧填充。数值类型的默认值。</td>
+</tr>
+<tr>
+<td><code>^</code></td>
+<td>居中；若填充无法均分，多余的填充字符放在右侧。</td>
+</tr>
+</tbody>
+</table>
+<p><em>fill</em> 字符可以是 <code>{</code> 或 <code>}</code> 之外的任意单个 Unicode 码点，
+编码方式与格式字符串一致。它取代默认的空格作为填充字符。
+填充字符只有在其后紧跟 <em>align</em> 字符时才会被识别——否则将与其他
+位置的选项无法区分——因此要使用自定义填充，必须同时指定对齐方式。</p>
+<p>当值的自然渲染宽度已不小于 <em>width</em> 时，对齐不产生任何可观察的效果；
+值绝不会被截断以适配宽度。</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">fmt</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">"[{:&lt;10}]"</span><span class="p">,</span><span class="w"> </span><span class="s">"42"</span><span class="p">);</span><span class="w">   </span><span class="c1">// Result: "[42        ]"</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">fmt</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">"[{:&gt;10}]"</span><span class="p">,</span><span class="w"> </span><span class="s">"42"</span><span class="p">);</span><span class="w">   </span><span class="c1">// Result: "[        42]"</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">fmt</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">"[{:^10}]"</span><span class="p">,</span><span class="w"> </span><span class="s">"42"</span><span class="p">);</span><span class="w">   </span><span class="c1">// Result: "[    42    ]"</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">fmt</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">"[{:*^10}]"</span><span class="p">,</span><span class="w"> </span><span class="s">"42"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Result: "[****42****]"  - '*' as fill</span>
+</span></code></pre></div>
+<h3 id="_4">符号<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p><em>sign</em> 字段控制数值的符号如何输出。仅适用于有符号整数与
+浮点类型。</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>+</code></td>
+<td>总是输出符号（非负值输出 <code>+</code>，负值输出 <code>-</code>）。</td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>仅对负值输出 <code>-</code>。这是默认行为。</td>
+</tr>
+<tr>
+<td>空格</td>
+<td>非负值输出前导空格，负值输出 <code>-</code>；用于对齐有符号数的列。</td>
+</tr>
+</tbody>
+</table>
+<p>浮点输出中会保留 <code>-0.0</code> 的符号。</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">fmt</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">"{:+d} {:+d}"</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">-7</span><span class="p">);</span><span class="w">  </span><span class="c1">// Result: "+7 -7"</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">fmt</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">"{: d} {: d}"</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">-7</span><span class="p">);</span><span class="w">  </span><span class="c1">// Result: " 7 -7"</span>
+</span></code></pre></div>
+<h3 id="_5">替代形式（<code>#</code>）<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p><code>#</code> 标志选择一种<em>替代形式</em>，其确切含义取决于呈现类型：</p>
+<ul>
+<li>对以二进制、八进制或十六进制呈现的整数，它会在前面加上相应的前缀
+  （<code>0b</code>/<code>0B</code>、<code>0</code> 或 <code>0x</code>/<code>0X</code>）。前缀的大小写跟随类型说明符——
+  <code>x</code> 对应 <code>0x</code>，<code>X</code> 对应 <code>0X</code>，依此类推。</li>
+<li>对浮点值，它强制小数点出现在输出中（即使按默认规则不会输出
+  小数部分），并阻止 <code>g</code>/<code>G</code> 呈现类型移除尾数末尾的零。</li>
+</ul>
+<p>非数值类型不接受 <code>#</code> 标志。</p>
+<h3 id="0">零填充（<code>0</code>）<a class="headerlink" href="#0" title="Permanent link">&para;</a></h3>
+<p>紧置于 <em>width</em> 之前的 <code>0</code> 会为数值类型启用感知符号的零填充。
+零被插入到符号（或前缀，如有的话）与最高有效位之间，
+使符号或 <code>0x</code> 前缀紧贴数字，而不是被空格隔开。
+例如，对 <code>120</code> 应用 <code>{:+08d}</code> 会得到 <code>+0000120</code>。</p>
+<p>零填充：</p>
+<ul>
+<li>仅适用于数值类型；</li>
+<li>对 <code>inf</code> 或 <code>nan</code> 无效；</li>
+<li>同时显式指定 <em>align</em> 时将被忽略。</li>
+</ul>
+<h3 id="_6">宽度<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p><em>width</em> 是非负十进制整数，给出字段应占的最小字符数。
+若格式化后的值短于 <em>width</em>，则按 <em>align</em> 与 <em>fill</em> 填充；
+若长于 <em>width</em>，则完整写出。<em>width</em> 绝不会导致值被截断。</p>
+<p>要在运行时提供 <em>width</em>，可将该字段写作 <code>{}</code> 以消耗下一个参数，
+或写作 <code>{arg_id}</code> 以按位置或名称引用一个整数参数。</p>
+<p>格式化字符串时，"宽度"以显示列数度量，采用感知 Unicode 的估算
+（东亚宽字符与全角字符以及常见 emoji 区间计为两列，其余计为一列）。
+这使得在等宽渲染下混排拉丁文与 CJK 文本时，
+固定 <em>width</em> 在视觉上保持一致。</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">fmt</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">"[{:6}]"</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p">);</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1">// Result: "[    42]"  - right-aligned by default</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">fmt</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">"[{:6}]"</span><span class="p">,</span><span class="w"> </span><span class="s">"hi"</span><span class="p">);</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1">// Result: "[hi    ]"  - left-aligned by default</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">fmt</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">"[{:{}}]"</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">);</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1">// Result: "[    42]"  - width from an argument</span>
+</span></code></pre></div>
+<h3 id="_7">精度<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p><em>precision</em> 是非负十进制整数（以 <code>.</code> 引入），其含义取决于
+被格式化的值。与 <em>width</em> 一样，它也可作为嵌套替换字段
+在运行时求值。</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th><code>.precision</code> 的含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>e</code>, <code>E</code>, <code>f</code>, <code>F</code></td>
+<td>小数点后输出的位数。</td>
+</tr>
+<tr>
+<td><code>g</code>, <code>G</code></td>
+<td>有效数字的总位数。</td>
+</tr>
+<tr>
+<td><code>a</code>, <code>A</code></td>
+<td>十六进制尾数中小数点后的位数。若省略，则仅输出恰好能精确往返表示该值所需的位数。</td>
+</tr>
+<tr>
+<td>字符串（<code>s</code>、<code>?</code> 或默认）</td>
+<td>从值中复制的码点数上限。</td>
+</tr>
+</tbody>
+</table>
+<p>整数、字符、布尔与指针类型不接受 <em>precision</em>。
+当 <em>precision</em> 限制从 C 字符串取用的字符数时，
+该字符串仍必须以空字符结尾。</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">fmt</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">"{:.2f}"</span><span class="p">,</span><span class="w"> </span><span class="mf">3.14159</span><span class="p">);</span><span class="w">        </span><span class="c1">// Result: "3.14"</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">fmt</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">"{:.3g}"</span><span class="p">,</span><span class="w"> </span><span class="mf">3.14159</span><span class="p">);</span><span class="w">        </span><span class="c1">// Result: "3.14"</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">fmt</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">"{:.4}"</span><span class="p">,</span><span class="w"> </span><span class="s">"hello, world"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Result: "hell"</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">fmt</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">"{:.{}f}"</span><span class="p">,</span><span class="w"> </span><span class="mf">3.14159</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1">// Result: "3.1416"  - precision from an argument</span>
+</span></code></pre></div>
+<h3 id="l">区域设置（<code>L</code>）<a class="headerlink" href="#l" title="Permanent link">&para;</a></h3>
+<p><code>L</code> 标志为数值类型选择随区域设置变化的格式化。
+格式化器会检查传给格式化函数的 C++ 区域设置
+（未传入时使用全局区域设置），并插入该区域设置的数字分组字符——
+对浮点值还包括其小数点。该标志对非数值类型无效。</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">auto</span><span class="w"> </span><span class="n">loc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">locale</span><span class="p">(</span><span class="s">"en_US.UTF-8"</span><span class="p">);</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">fmt</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="n">loc</span><span class="p">,</span><span class="w"> </span><span class="s">"{:L}"</span><span class="p">,</span><span class="w"> </span><span class="mi">1234567890</span><span class="p">);</span><span class="w">     </span><span class="c1">// Result: "1,234,567,890"</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">fmt</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="n">loc</span><span class="p">,</span><span class="w"> </span><span class="s">"{:.2Lf}"</span><span class="p">,</span><span class="w"> </span><span class="mf">1234567.89</span><span class="p">);</span><span class="w">  </span><span class="c1">// Result: "1,234,567.89"</span>
+</span></code></pre></div>
+<h3 id="_8">呈现类型<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p><em>type</em> 字段选择值的表示形式。下面按适用的值类别对说明符分组。</p>
+<p><strong>整数、布尔值与字符：</strong></p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>b</code></td>
+<td>以 2 为基数。<code>#</code> 标志会添加 <code>0b</code> 前缀。</td>
+</tr>
+<tr>
+<td><code>B</code></td>
+<td>以 2 为基数。<code>#</code> 标志会添加 <code>0B</code> 前缀。</td>
+</tr>
+<tr>
+<td><code>c</code></td>
+<td>将整数渲染为该码点对应的字符。不适用于 <code>bool</code>。</td>
+</tr>
+<tr>
+<td><code>d</code></td>
+<td>以 10 为基数。整数类型的默认值。</td>
+</tr>
+<tr>
+<td><code>o</code></td>
+<td>以 8 为基数。</td>
+</tr>
+<tr>
+<td><code>x</code></td>
+<td>以 16 为基数，小写数字。<code>#</code> 标志会添加 <code>0x</code> 前缀。</td>
+</tr>
+<tr>
+<td><code>X</code></td>
+<td>以 16 为基数，大写数字。<code>#</code> 标志会添加 <code>0X</code> 前缀。</td>
+</tr>
+<tr>
+<td>none</td>
+<td>整数等同 <code>d</code>，字符等同 <code>c</code>，<code>bool</code> 为文本形式（<code>true</code>/<code>false</code>）。</td>
+</tr>
+</tbody>
+</table>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">fmt</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">"{:d} {:#x} {:#o} {:#b}"</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p">);</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1">// Result: "42 0x2a 052 0b101010"</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">fmt</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">"{:#06x}"</span><span class="p">,</span><span class="w"> </span><span class="mh">0xfe</span><span class="p">);</span><span class="w">  </span><span class="c1">// # adds the prefix, 06 zero-pads to width 6</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c1">// Result: "0x00fe"</span>
+</span></code></pre></div>
+<p><strong>浮点值：</strong></p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>a</code></td>
+<td>十六进制尾数形式（如 <code>0x1.8p+1</code>）。数字与二进制指数的 <code>p</code> 均为小写。始终输出 <code>0x</code> 前缀，与 printf 的 <code>%a</code> 一致。<code>#</code> 标志强制输出小数点（如 <code>0x1.p+1</code>）。</td>
+</tr>
+<tr>
+<td><code>A</code></td>
+<td>同 <code>a</code>，但全部使用大写。</td>
+</tr>
+<tr>
+<td><code>e</code></td>
+<td>科学计数法，十进制指数使用小写 <code>e</code>。</td>
+</tr>
+<tr>
+<td><code>E</code></td>
+<td>科学计数法，使用大写 <code>E</code>。</td>
+</tr>
+<tr>
+<td><code>f</code></td>
+<td>定点表示。</td>
+</tr>
+<tr>
+<td><code>F</code></td>
+<td>同 <code>f</code>，但将 <code>nan</code> 渲染为 <code>NAN</code>、<code>inf</code> 渲染为 <code>INF</code>。</td>
+</tr>
+<tr>
+<td><code>g</code></td>
+<td>通用形式：当指数小于 &minus;4 或不小于精度时用科学计数法，否则用定点表示；除非设置了 <code>#</code>，否则会移除小数部分末尾的零。精度为 <code>0</code> 时按 <code>1</code> 解释。</td>
+</tr>
+<tr>
+<td><code>G</code></td>
+<td>同 <code>g</code>，但指数使用 <code>E</code>，并输出大写 <code>INF</code>/<code>NAN</code>。</td>
+</tr>
+<tr>
+<td>none</td>
+<td>最短往返表示：格式化结果再解析回同一浮点类型时，逐位复现输入。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>字符串与字符：</strong></p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>s</code></td>
+<td>普通字符串输出。字符串类型与 <code>bool</code>（渲染为 <code>true</code> 或 <code>false</code>）的默认值。</td>
+</tr>
+<tr>
+<td><code>c</code></td>
+<td>字符输出。字符类型的默认值。不适用于 <code>bool</code>。</td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td>调试输出：值被包在单引号（字符）或双引号（字符串）中，不可打印、非 ASCII 及特殊字符以 C 风格转义序列转义，例如 <code>\n</code>、<code>\t</code>、<code>\"</code>、<code>\u{...}</code>。</td>
+</tr>
+<tr>
+<td>none</td>
+<td>字符串与 <code>bool</code> 等同 <code>s</code>，字符等同 <code>c</code>。</td>
+</tr>
+</tbody>
+</table>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">fmt</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">"{}"</span><span class="p">,</span><span class="w">   </span><span class="s">"tab</span><span class="se">\t</span><span class="s">here"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Result contains a literal tab character.</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">fmt</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">"{:?}"</span><span class="p">,</span><span class="w"> </span><span class="s">"tab</span><span class="se">\t</span><span class="s">here"</span><span class="p">);</span><span class="w">  </span><span class="c1">// Result: "\"tab\\there\""</span>
+</span></code></pre></div>
+<p><strong>指针：</strong></p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>p</code></td>
+<td>以 <code>0x</code> 为前缀的十六进制地址。指针类型的默认值。</td>
+</tr>
+<tr>
+<td>none</td>
+<td>等同 <code>p</code>。</td>
+</tr>
+</tbody>
+</table>
+<p>C 字符串（<code>char*</code> 或 <code>const char*</code>）同时接受字符串呈现类型
+与 <code>p</code>，因此同一个值既可格式化为文本，也可格式化为地址。</p>
+<h2 id="_9">时间日期格式规范<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>时长与时间点类型以及 <code>std::tm</code> 的格式规范具有如下语法：</p>
+<p><a id="chrono-format-spec"></a></p>
+<pre><code class="language-json"
+>chrono_format_spec ::= [[<a href="#format-spec">fill</a>]<a href="#format-spec"
+  >align</a>][<a href="#format-spec">width</a>]["." <a href="#format-spec"
+  >precision</a>][chrono_specs]
+chrono_specs       ::= conversion_spec |
+                       chrono_specs (conversion_spec | literal_char)
+conversion_spec    ::= "%" [padding_modifier] [locale_modifier] chrono_type
+literal_char       ::= &lt;a character other than '{', '}' or '%'>
+padding_modifier   ::= "-" | "_"
+locale_modifier    ::= "E" | "O"
+chrono_type        ::= "a" | "A" | "b" | "B" | "c" | "C" | "d" | "D" | "e" |
+                       "F" | "g" | "G" | "h" | "H" | "I" | "j" | "m" | "M" |
+                       "n" | "p" | "q" | "Q" | "r" | "R" | "S" | "t" | "T" |
+                       "u" | "U" | "V" | "w" | "W" | "x" | "X" | "y" | "Y" |
+                       "z" | "Z" | "%"</code>
+</pre>
+
+<p>字面字符将原样复制到输出。精度仅对以浮点类型为表示类型的
+<code>std::chrono::duration</code> 有效。</p>
+<p>可用的呈现类型（<em>chrono_type</em>）如下：</p>
+<table>
+<tr>
+  <th>类型</th>
+  <th>含义</th>
+</tr>
+<tr>
+  <td><code>'a'</code></td>
+  <td>
+    星期几的缩写名，例如 "Sat"。若值中不含有效的星期几，
+    则抛出 <code>format_error</code> 类型异常。
+  </td>
+</tr>
+<tr>
+  <td><code>'A'</code></td>
+  <td>
+    星期几的全名，例如 "Saturday"。若值中不含有效的星期几，
+    则抛出 <code>format_error</code> 类型异常。
+  </td>
+</tr>
+<tr>
+  <td><code>'b'</code></td>
+  <td>
+    月份的缩写名，例如 "Nov"。若值中不含有效的月份，
+    则抛出 <code>format_error</code> 类型异常。
+  </td>
+</tr>
+<tr>
+  <td><code>'B'</code></td>
+  <td>
+    月份的全名，例如 "November"。若值中不含有效的月份，
+    则抛出 <code>format_error</code> 类型异常。
+  </td>
+</tr>
+<tr>
+  <td><code>'c'</code></td>
+  <td>
+    日期与时间的表示，例如 "Sat Nov 12 22:04:00 1955"。修饰命令
+    <code>%Ec</code> 产生区域设置的备用日期与时间表示。
+  </td>
+</tr>
+<tr>
+  <td><code>'C'</code></td>
+  <td>
+    以向下取整除法将年份除以 100 的结果，例如 "19"。若结果
+    为单个十进制数字，则前面补 0。修饰命令
+    <code>%EC</code> 产生区域设置对世纪的备用表示。
+  </td>
+</tr>
+<tr>
+  <td><code>'d'</code></td>
+  <td>
+    以十进制数表示的日。若结果为单个十进制数字，则前面补 0。修饰命令
+    <code>%Od</code> 产生区域设置的备用表示。
+  </td>
+</tr>
+<tr>
+  <td><code>'D'</code></td>
+  <td>等同 <code>%m/%d/%y</code>，例如 "11/12/55"。</td>
+</tr>
+<tr>
+  <td><code>'e'</code></td>
+  <td>
+    以十进制数表示的日。若结果为单个十进制数字，则前面补一个空格。修饰命令
+    <code>%Oe</code> 产生区域设置的备用表示。
+  </td>
+</tr>
+<tr>
+  <td><code>'F'</code></td>
+  <td>等同 <code>%Y-%m-%d</code>，例如 "1955-11-12"。</td>
+</tr>
+<tr>
+  <td><code>'g'</code></td>
+  <td>
+    基于 ISO 周的年份的最后两位十进制数字。若结果为
+    单个数字，则前面补 0。
+  </td>
+</tr>
+<tr>
+  <td><code>'G'</code></td>
+  <td>
+    以十进制数表示的基于 ISO 周的年份。若结果不足
+    四位，则左侧补 0 至四位。
+  </td>
+</tr>
+<tr>
+  <td><code>'h'</code></td>
+  <td>等同 <code>%b</code>，例如 "Nov"。</td>
+</tr>
+<tr>
+  <td><code>'H'</code></td>
+  <td>
+    以十进制数表示的小时（24 小时制）。若结果为单个数字，
+    则前面补 0。修饰命令 <code>%OH</code>
+    产生区域设置的备用表示。
+  </td>
+</tr>
+<tr>
+  <td><code>'I'</code></td>
+  <td>
+    以十进制数表示的小时（12 小时制）。若结果为单个数字，
+    则前面补 0。修饰命令 <code>%OI</code>
+    产生区域设置的备用表示。
+  </td>
+</tr>
+<tr>
+  <td><code>'j'</code></td>
+  <td>
+    若被格式化的类型是 duration 的特化，则为不补零的天数十进制数；
+    否则为以十进制数表示的年中第几天。1 月 1 日为 001。
+    若结果不足三位，则左侧补 0 至三位。
+  </td>
+</tr>
+<tr>
+  <td><code>'m'</code></td>
+  <td>
+    以十进制数表示的月份。1 月为 01。若结果为单个数字，
+    则前面补 0。修饰命令 <code>%Om</code> 产生
+    区域设置的备用表示。
+  </td>
+</tr>
+<tr>
+  <td><code>'M'</code></td>
+  <td>
+    以十进制数表示的分钟。若结果为单个数字，则
+    前面补 0。修饰命令 <code>%OM</code> 产生
+    区域设置的备用表示。
+  </td>
+</tr>
+<tr>
+  <td><code>'n'</code></td>
+  <td>换行字符。</td>
+</tr>
+<tr>
+  <td><code>'p'</code></td>
+  <td>与 12 小时制关联的 AM/PM 标记。</td>
+</tr>
+<tr>
+  <td><code>'q'</code></td>
+  <td>时长的单位后缀。</td>
+</tr>
+<tr>
+  <td><code>'Q'</code></td>
+  <td>
+    时长的数值（如同通过 <code>.count()</code> 提取）。
+  </td>
+</tr>
+<tr>
+  <td><code>'r'</code></td>
+  <td>12 小时制时间，例如 "10:04:00 PM"。</td>
+</tr>
+<tr>
+  <td><code>'R'</code></td>
+  <td>等同 <code>%H:%M</code>，例如 "22:04"。</td>
+</tr>
+<tr>
+  <td><code>'S'</code></td>
+  <td>
+    以十进制数表示的秒。若秒数小于 10，则结果前面补 0。
+    若输入的精度无法用整数秒精确表示，则格式为固定格式的
+    十进制浮点数，其精度与输入精度一致（若转换为浮点
+    十进制秒无法在 18 位小数内完成，则取微秒精度）。修饰
+    命令 <code>%OS</code> 产生区域设置的备用表示。
+  </td>
+</tr>
+<tr>
+  <td><code>'t'</code></td>
+  <td>水平制表字符。</td>
+</tr>
+<tr>
+  <td><code>'T'</code></td>
+  <td>等同 <code>%H:%M:%S</code>。</td>
+</tr>
+<tr>
+  <td><code>'u'</code></td>
+  <td>
+    以十进制数表示的 ISO 星期几（1-7），周一为 1。修饰
+    命令 <code>%Ou</code> 产生区域设置的备用表示。
+  </td>
+</tr>
+<tr>
+  <td><code>'U'</code></td>
+  <td>
+    以十进制数表示的年中第几周。当年第一个周日是第 01 周的
+    第一天；在此之前的日子属第 00 周。若结果为单个数字，
+    则前面补 0。修饰命令 <code>%OU</code> 产生区域设置的
+    备用表示。
+  </td>
+</tr>
+<tr>
+  <td><code>'V'</code></td>
+  <td>
+    以十进制数表示的基于 ISO 周的周数。若结果为
+    单个数字，则前面补 0。修饰命令 <code>%OV</code>
+    产生区域设置的备用表示。
+  </td>
+</tr>
+<tr>
+  <td><code>'w'</code></td>
+  <td>
+    以十进制数表示的星期几（0-6），周日为 0。修饰
+    命令 <code>%Ow</code> 产生区域设置的备用表示。
+  </td>
+</tr>
+<tr>
+  <td><code>'W'</code></td>
+  <td>
+    以十进制数表示的年中第几周。当年第一个周一是第 01 周的
+    第一天；在此之前的日子属第 00 周。若结果为单个数字，
+    则前面补 0。修饰命令 <code>%OW</code> 产生区域设置的
+    备用表示。
+  </td>
+</tr>
+<tr>
+  <td><code>'x'</code></td>
+  <td>
+    日期表示，例如 "11/12/55"。修饰命令
+    <code>%Ex</code> 产生区域设置的备用日期表示。
+  </td>
+</tr>
+<tr>
+  <td><code>'X'</code></td>
+  <td>
+    时间表示，例如 "10:04:00"。修饰命令
+    <code>%EX</code> 产生区域设置的备用时间表示。
+  </td>
+</tr>
+<tr>
+  <td><code>'y'</code></td>
+  <td>
+    年份的最后两位十进制数字。若结果为单个数字，
+    则前面补 0。修饰命令 <code>%Oy</code> 产生
+    区域设置的备用表示。修饰命令 <code>%Ey</code>
+    产生区域设置相对 <code>%EC</code>（仅年份）偏移量的备用表示。
+  </td>
+</tr>
+<tr>
+  <td><code>'Y'</code></td>
+  <td>
+    以十进制数表示的年份。若结果不足四位，则
+    左侧补 0 至四位。修饰命令 <code>%EY</code>
+    产生区域设置的备用全年表示。
+  </td>
+</tr>
+<tr>
+  <td><code>'z'</code></td>
+  <td>
+    ISO 8601:2004 格式的 UTC 偏移。例如 -0430 表示
+    比 UTC 慢 4 小时 30 分。若偏移为零，则使用 +0000。
+    修饰命令 <code>%Ez</code> 与 <code>%Oz</code> 在
+    小时与分钟之间插入 <code>:</code>：-04:30。若偏移
+    信息不可用，则抛出 <code>format_error</code> 类型异常。
+  </td>
+</tr>
+<tr>
+  <td><code>'Z'</code></td>
+  <td>
+    时区缩写。若时区缩写不可用，
+    则抛出 <code>format_error</code> 类型异常。
+  </td>
+</tr>
+<tr>
+  <td><code>'%'</code></td>
+  <td>% 字符本身。</td>
+</tr>
+</table>
+
+<p>含日历成分的说明符（如 <code>'d'</code>，即日）仅对 <code>std::tm</code> 与时间点有效，
+对时长无效。</p>
+<p>可用的填充修饰符（<em>padding_modifier</em>）如下：</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>'_'</code></td>
+<td>用空格填充数值结果。</td>
+</tr>
+<tr>
+<td><code>'-'</code></td>
+<td>不填充数值结果字符串。</td>
+</tr>
+</tbody>
+</table>
+<p>这些修饰符仅支持 <code>'H'</code>、<code>'I'</code>、<code>'M'</code>、<code>'S'</code>、<code>'U'</code>、
+<code>'V'</code>、<code>'W'</code>、<code>'Y'</code>、<code>'d'</code>、<code>'j'</code> 和 <code>'m'</code> 呈现类型。</p>
+<p>示例：</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;fmt/chrono.h&gt;</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="k">auto</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">tm</span><span class="p">();</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">t</span><span class="p">.</span><span class="n">tm_year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2010</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1900</span><span class="p">;</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="n">t</span><span class="p">.</span><span class="n">tm_mon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="n">t</span><span class="p">.</span><span class="n">tm_mday</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="n">t</span><span class="p">.</span><span class="n">tm_hour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="n">t</span><span class="p">.</span><span class="n">tm_min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">15</span><span class="p">;</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="n">t</span><span class="p">.</span><span class="n">tm_sec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">58</span><span class="p">;</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="n">fmt</span><span class="o">::</span><span class="n">print</span><span class="p">(</span><span class="s">"{:%Y-%m-%d %H:%M:%S}"</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">);</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="c1">// Prints: 2010-08-04 12:15:58</span>
+</span></code></pre></div>
+<h2 id="_10">范围格式规范<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p>范围类型的格式规范具有如下语法：</p>
+<pre><code class="language-json"
+>range_format_spec ::= [[fill]align][width]["n"][range_type][":" range_underlying_spec]</code>
+</pre>
+
+<p><code>fill</code>、<code>align</code> 与 <code>width</code> 选项的含义与
+<a href="#format-specification-mini-language">标准格式规范</a>相同，
+但 <code>:</code> 不能用作填充字符，因为它用于引入底层元素规范。
+它们作用于整个格式化范围而非其元素。</p>
+<p><code>'n'</code> 选项格式化范围时省略开头与结尾的方括号。</p>
+<p><code>range_type</code> 可用的呈现类型如下：</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>none</td>
+<td>默认格式。</td>
+</tr>
+<tr>
+<td><code>'s'</code></td>
+<td>字符串格式。范围被格式化为字符串。</td>
+</tr>
+<tr>
+<td><code>'?⁠s'</code></td>
+<td>调试格式。范围被格式化为转义字符串。</td>
+</tr>
+</tbody>
+</table>
+<p>若 <code>range_type</code> 为 <code>'s'</code> 或 <code>'?s'</code>，则范围的元素类型必须是字符类型。
+<code>'n'</code> 选项与 <code>range_underlying_spec</code> 不能与
+<code>'s'</code> 和 <code>'?s'</code> 同时使用。</p>
+<p><code>range_underlying_spec</code> 依据范围元素类型的 formatter 进行解析。</p>
+<p>默认情况下，字符或字符串范围会以转义并加引号的形式打印。
+但只要提供了 <code>range_underlying_spec</code>（即使为空），字符或字符串
+就会按所提供的规范打印。</p>
+<p>示例：</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">fmt</span><span class="o">::</span><span class="n">print</span><span class="p">(</span><span class="s">"{}"</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="p">{</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">});</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="c1">// Output: [10, 20, 30]</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">fmt</span><span class="o">::</span><span class="n">print</span><span class="p">(</span><span class="s">"{::#x}"</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="p">{</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">});</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1">// Output: [0xa, 0x14, 0x1e]</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="n">fmt</span><span class="o">::</span><span class="n">print</span><span class="p">(</span><span class="s">"{}"</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="p">{</span><span class="sc">'h'</span><span class="p">,</span><span class="w"> </span><span class="sc">'e'</span><span class="p">,</span><span class="w"> </span><span class="sc">'l'</span><span class="p">,</span><span class="w"> </span><span class="sc">'l'</span><span class="p">,</span><span class="w"> </span><span class="sc">'o'</span><span class="p">});</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="c1">// Output: ['h', 'e', 'l', 'l', 'o']</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="n">fmt</span><span class="o">::</span><span class="n">print</span><span class="p">(</span><span class="s">"{:n}"</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="p">{</span><span class="sc">'h'</span><span class="p">,</span><span class="w"> </span><span class="sc">'e'</span><span class="p">,</span><span class="w"> </span><span class="sc">'l'</span><span class="p">,</span><span class="w"> </span><span class="sc">'l'</span><span class="p">,</span><span class="w"> </span><span class="sc">'o'</span><span class="p">});</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="c1">// Output: 'h', 'e', 'l', 'l', 'o'</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="n">fmt</span><span class="o">::</span><span class="n">print</span><span class="p">(</span><span class="s">"{:s}"</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="p">{</span><span class="sc">'h'</span><span class="p">,</span><span class="w"> </span><span class="sc">'e'</span><span class="p">,</span><span class="w"> </span><span class="sc">'l'</span><span class="p">,</span><span class="w"> </span><span class="sc">'l'</span><span class="p">,</span><span class="w"> </span><span class="sc">'o'</span><span class="p">});</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="c1">// Output: hello</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="n">fmt</span><span class="o">::</span><span class="n">print</span><span class="p">(</span><span class="s">"{:?s}"</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="p">{</span><span class="sc">'h'</span><span class="p">,</span><span class="w"> </span><span class="sc">'e'</span><span class="p">,</span><span class="w"> </span><span class="sc">'l'</span><span class="p">,</span><span class="w"> </span><span class="sc">'l'</span><span class="p">,</span><span class="w"> </span><span class="sc">'o'</span><span class="p">,</span><span class="w"> </span><span class="sc">'\n'</span><span class="p">});</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="c1">// Output: "hello\n"</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="n">fmt</span><span class="o">::</span><span class="n">print</span><span class="p">(</span><span class="s">"{::}"</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="p">{</span><span class="sc">'h'</span><span class="p">,</span><span class="w"> </span><span class="sc">'e'</span><span class="p">,</span><span class="w"> </span><span class="sc">'l'</span><span class="p">,</span><span class="w"> </span><span class="sc">'l'</span><span class="p">,</span><span class="w"> </span><span class="sc">'o'</span><span class="p">});</span>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="c1">// Output: [h, e, l, l, o]</span>
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="n">fmt</span><span class="o">::</span><span class="n">print</span><span class="p">(</span><span class="s">"{::d}"</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="p">{</span><span class="sc">'h'</span><span class="p">,</span><span class="w"> </span><span class="sc">'e'</span><span class="p">,</span><span class="w"> </span><span class="sc">'l'</span><span class="p">,</span><span class="w"> </span><span class="sc">'l'</span><span class="p">,</span><span class="w"> </span><span class="sc">'o'</span><span class="p">});</span>
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="c1">// Output: [104, 101, 108, 108, 111]</span>
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="n">fmt</span><span class="o">::</span><span class="n">print</span><span class="p">(</span><span class="s">"{:n:f}"</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="p">{</span><span class="n">std</span><span class="o">::</span><span class="n">numbers</span><span class="o">::</span><span class="n">pi</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">numbers</span><span class="o">::</span><span class="n">e</span><span class="p">});</span>
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="c1">// Output: 3.141593, 2.718282</span>
+</span></code></pre></div>
+<h2 id="_11">组合示例<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<p>下面的示例将前文介绍的几个要素——嵌套替换字段、填充字符与
+居中——结合起来，为一条消息绘制固定宽度的边框：</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">fmt</span><span class="o">::</span><span class="n">print</span><span class="p">(</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="s">"┌{0:─^{2}}┐</span><span class="se">\n</span><span class="s">"</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="s">"│{1: ^{2}}│</span><span class="se">\n</span><span class="s">"</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span><span class="s">"└{0:─^{2}}┘</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="s">""</span><span class="p">,</span><span class="w"> </span><span class="s">"Hello, world!"</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">);</span>
+</span></code></pre></div>
+<p>输出：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>┌────────────────────┐
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>│   Hello, world!    │
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>└────────────────────┘
+</span></code></pre></div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年11月18日 18:48:03 UTC">2026年11月18日</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      基于 fmtlib/fmt 文档翻译，遵循 MIT License
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/fmtlib/fmt" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://discord.gg/fmt" target="_blank" rel="noopener" title="discord.gg" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M492.5 69.8c-.2-.3-.4-.6-.8-.7-38.1-17.5-78.4-30-119.7-37.1-.4-.1-.8 0-1.1.1s-.6.4-.8.8c-5.5 9.9-10.5 20.2-14.9 30.6-44.6-6.8-89.9-6.8-134.4 0-4.5-10.5-9.5-20.7-15.1-30.6-.2-.3-.5-.6-.8-.8s-.7-.2-1.1-.2C162.5 39 122.2 51.5 84.1 69c-.3.1-.6.4-.8.7C7.1 183.5-13.8 294.6-3.6 404.2c0 .3.1.5.2.8s.3.4.5.6c44.4 32.9 94 58 146.8 74.2.4.1.8.1 1.1 0s.7-.4.9-.7c11.3-15.4 21.4-31.8 30-48.8.1-.2.2-.5.2-.8s0-.5-.1-.8-.2-.5-.4-.6-.4-.3-.7-.4c-15.8-6.1-31.2-13.4-45.9-21.9-.3-.2-.5-.4-.7-.6s-.3-.6-.3-.9 0-.6.2-.9.3-.5.6-.7c3.1-2.3 6.2-4.7 9.1-7.1.3-.2.6-.4.9-.4s.7 0 1 .1c96.2 43.9 200.4 43.9 295.5 0 .3-.1.7-.2 1-.2s.7.2.9.4c2.9 2.4 6 4.9 9.1 7.2.2.2.4.4.6.7s.2.6.2.9-.1.6-.3.9-.4.5-.6.6c-14.7 8.6-30 15.9-45.9 21.8-.2.1-.5.2-.7.4s-.3.4-.4.7-.1.5-.1.8.1.5.2.8c8.8 17 18.8 33.3 30 48.8.2.3.6.6.9.7s.8.1 1.1 0c52.9-16.2 102.6-41.3 147.1-74.2.2-.2.4-.4.5-.6s.2-.5.2-.8c12.3-126.8-20.5-236.9-86.9-334.5zm-302 267.7c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.2-52.8 59.2m195.4 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.2-52.8 59.2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "toc.integrate"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="../assets/js/bilingual-toggle.js"></script>
+      
+        <script src="../assets/js/version-switcher.js"></script>
+      
+        <script src="../assets/js/analytics.js"></script>
+      
+    
+  </body>
+</html>

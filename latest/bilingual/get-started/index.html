@@ -1,0 +1,1689 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="{fmt} 库官方文档中文翻译版">
+      
+      
+        <meta name="author" content="fmt 中文文档翻译组">
+      
+      
+        <link rel="canonical" href="https://jxsword.github.io/fmt-zh-docs/latest/bilingual/get-started/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../syntax/">
+      
+      
+        
+          <link rel="alternate" href="https://fmt.dev/latest/" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+    
+    
+      
+        <title>快速开始 - fmt 中文文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans SC";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/css/custom.css">
+    
+      <link rel="stylesheet" href="../../assets/css/bilingual.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-XXXXXXXXXX"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-XXXXXXXXXX",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="fmt 中文文档" class="md-header__button md-logo" aria-label="fmt 中文文档" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            fmt 中文文档
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              快速开始
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="选择当前语言">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="https://fmt.dev/latest/" hreflang="en" class="md-select__link">
+              English (Original)
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/jxsword/fmt-zh-docs" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    fmt-zh-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../get-started/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  快速开始
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../syntax/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  格式语法
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../api/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  API 参考
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../ChangeLog-old/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  更新日志（英文原文）
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../about/" class="md-tabs__link">
+          
+  
+  
+  双语对照
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="fmt 中文文档" class="md-nav__button md-logo" aria-label="fmt 中文文档" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    fmt 中文文档
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/jxsword/fmt-zh-docs" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    fmt-zh-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../get-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    快速开始
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../syntax/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    格式语法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API 参考
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ChangeLog-old/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    更新日志（英文原文）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    双语对照
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    双语对照
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    说明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    快速开始
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    快速开始
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        快速开始
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cmake" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CMake
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        备选目标
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        使用 C++20 模块
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安装
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debianubuntu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debian/Ubuntu
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#homebrew" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Homebrew
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conda
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vcpkg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        vcpkg
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conan
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#printf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        从 printf 迁移
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        从源码构建
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        构建文档
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        构建系统
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        build2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#meson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Meson
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#android-ndk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Android NDK
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        其他
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../syntax/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    格式语法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API 参考
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset"><a class="md-content__button md-icon" download href="get-started.pdf" title="PDF Export"><svg style="height: 1.2rem; width: 1.2rem;" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm76.45 211.36l-96.42 95.7c-6.65 6.61-17.39 6.61-24.04 0l-96.42-95.7C73.42 337.29 80.54 320 94.82 320H160v-80c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v80h65.18c14.28 0 21.4 17.29 11.27 27.36zM377 105L279.1 7c-4.5-4.5-10.6-7-17-7H256v128h128v-6.1c0-6.3-2.5-12.4-7-16.9z"></path></svg></a>
+                
+                  
+
+
+  
+  
+
+
+<h1 id="_1">双语对照：快速开始<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>本页为 <code>get-started.md</code> 的中英段落对照（DR-005 独立对照模式）。每段先中文译文，再以引用块给出英文原文；代码块为逐字保留内容，不参与对照。</p>
+</blockquote>
+<h2 id="_2">快速开始<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>原文标题：Get Started</p>
+</blockquote>
+<p>您可以在 <a href="https://godbolt.org/z/P7h6cd6o3">Compiler Explorer</a> 上在线编译并运行 {fmt} 示例。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Compile and run {fmt} examples online with [Compiler Explorer](
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>https://godbolt.org/z/P7h6cd6o3).
+</span></code></pre></div>
+<p>{fmt} 兼容任何构建系统。下一节介绍其在 CMake 中的用法，其余构建系统见
+<a href="#build-systems">构建系统</a>一节。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>{fmt} is compatible with any build system. The next section describes its usage
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>with CMake, while the [Build Systems](#build-systems) section covers the rest.
+</span></code></pre></div>
+<h2 id="cmake">CMake<a class="headerlink" href="#cmake" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>原文标题：CMake</p>
+</blockquote>
+<p>{fmt} 提供以下 CMake 目标：<code>fmt::fmt</code>（标准编译库）、
+<code>fmt::fmt-header-only</code>（仅头文件库），以及在启用 <code>FMT_MODULE</code> 选项时
+可选的 <code>fmt::fmt-module</code>（C++ 模块库）。推荐使用编译库或模块库
+以获得更快的构建速度。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>{fmt} provides CMake targets: `fmt::fmt` for the standard compiled library,
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>`fmt::fmt-header-only` for the header-only library, and optionally
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>`fmt::fmt-module` for the C++ module library when the `FMT_MODULE` option is
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>enabled. It is recommended to use the compiled library or the module library for
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>improved build times. 
+</span></code></pre></div>
+<p>在 CMake 中使用 {fmt} 主要有三种方式：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>There are three primary ways to use {fmt} with CMake:
+</span></code></pre></div>
+<ul>
+<li><strong>FetchContent</strong>：从 CMake 3.11 开始，您可以使用 <a href="https://cmake.org/cmake/help/v3.30/module/FetchContent.html"><code>FetchContent</code></a> 在配置阶段
+  自动下载 {fmt} 作为依赖：</li>
+</ul>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>* **FetchContent**: Starting from CMake 3.11, you can use [`FetchContent`](
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>  https://cmake.org/cmake/help/v3.30/module/FetchContent.html) to automatically
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>  download {fmt} as a dependency at configure time:
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>    include(FetchContent)
+</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>        include(FetchContent)
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>    FetchContent_Declare(
+      fmt
+      GIT_REPOSITORY https://github.com/fmtlib/fmt
+      GIT_TAG        e69e5f977d458f2650bb346dadf2ad30c5320281) # 10.2.1
+    FetchContent_MakeAvailable(fmt)
+</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>        FetchContent_Declare(
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>          fmt
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>          GIT_REPOSITORY https://github.com/fmtlib/fmt
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>          GIT_TAG        e69e5f977d458f2650bb346dadf2ad30c5320281) # 10.2.1
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>        FetchContent_MakeAvailable(fmt)
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>    target_link_libraries(&lt;your-target&gt; fmt::fmt)
+</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>        target_link_libraries(&lt;your-target&gt; fmt::fmt)
+</span></code></pre></div>
+<ul>
+<li><strong>已安装</strong>：如果您已<a href="#installation">安装</a> {fmt}，可在您的
+  <code>CMakeLists.txt</code> 文件中按如下方式查找并使用：</li>
+</ul>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>* **Installed**: You can find and use an [installed](#installation) version of
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>  {fmt} in your `CMakeLists.txt` file as follows:
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>    find_package(fmt)
+    target_link_libraries(&lt;your-target&gt; fmt::fmt)
+</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>        find_package(fmt)
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>        target_link_libraries(&lt;your-target&gt; fmt::fmt)
+</span></code></pre></div>
+<ul>
+<li><strong>内嵌</strong>：您可以将 {fmt} 源码树加入您的项目，并在
+  <code>CMakeLists.txt</code> 文件中包含它：</li>
+</ul>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>* **Embedded**: You can add the {fmt} source tree to your project and include it
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>  in your `CMakeLists.txt` file:
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>    add_subdirectory(fmt)
+    target_link_libraries(&lt;your-target&gt; fmt::fmt)
+</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>        add_subdirectory(fmt)
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>        target_link_libraries(&lt;your-target&gt; fmt::fmt)
+</span></code></pre></div>
+<h2 id="_3">备选目标<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>原文标题：Alternative Targets</p>
+</blockquote>
+<p>如需使用仅头文件目标或模块目标，只需将上述步骤中的
+<code>fmt::fmt</code> 相应替换为 <code>fmt::fmt-header-only</code> 或 <code>fmt::fmt-module</code>。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>In order to use the header-only target or the module target, simply substitute the
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>`fmt::fmt` in the above steps with `fmt::fmt-header-only` or `fmt::fmt-module` 
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>accordingly.
+</span></code></pre></div>
+<h2 id="c20">使用 C++20 模块<a class="headerlink" href="#c20" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>原文标题：Using the C++20 Module</p>
+</blockquote>
+<p><code>fmt::fmt-module</code> 目标仅在启用 <code>FMT_MODULE</code> CMake 选项时可用。
+在添加 {fmt} 之前配置项目时传入 <code>-DFMT_MODULE=ON</code> 即可启用；
+或在添加 {fmt} 前将 <code>CMAKE_CXX_STANDARD</code> 设为至少 20——若工具链支持，
+将自动启用模块支持。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>The `fmt::fmt-module` target is only available when the `FMT_MODULE` CMake
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>option is enabled. Enable it by passing `-DFMT_MODULE=ON` when configuring your
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>project before adding {fmt}, or set `CMAKE_CXX_STANDARD` to at least 20 before
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>adding {fmt} which will enable module support automatically when supported by
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>the toolchain.
+</span></code></pre></div>
+<p>将您的目标链接到 <code>fmt::fmt-module</code>，并以导入 <code>fmt</code> 取代包含
+{fmt} 头文件：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Link your target to `fmt::fmt-module` and import `fmt` instead of including a
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>{fmt} header:
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>target_link_libraries(&lt;your-target&gt; PRIVATE fmt::fmt-module)
+</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>    target_link_libraries(&lt;your-target&gt; PRIVATE fmt::fmt-module)
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>import fmt;
+</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>    import fmt;
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>int main() {
+  fmt::print("Hello, world!\n");
+}
+</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>    int main() {
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>      fmt::print("Hello, world!\n");
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    }
+</span></code></pre></div>
+<p>当使用 CMake 3.28 或更新版本并配合 Ninja 生成器（Ninja 1.11 或更新）、
+GCC 15 或 Clang 16（需 <code>clang-scan-deps</code>）或更新版本，或
+Visual Studio 2022 17.4 或更新版本时，{fmt} 会通过 CMake 原生 C++
+模块支持来构建模块。只有以这种带 Ninja 的方式构建时模块才会被安装，
+且 CMake 只能在同样使用 Ninja 的项目中导入已安装的模块，
+因此请将两者相应配置，例如：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>{fmt} builds the module with CMake's native C++ module support when using
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>CMake 3.28 or newer with the Ninja generator (Ninja 1.11 or newer) and GCC 15
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>or Clang 16 (with `clang-scan-deps`) or newer, or with Visual Studio 2022 17.4
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>or newer. The module is only installed when built this way with Ninja, and
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>CMake can only import an installed module in projects that also use Ninja, so
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>configure both accordingly, for example:
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>cmake -G Ninja -DFMT_MODULE=ON ..
+</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>    cmake -G Ninja -DFMT_MODULE=ON ..
+</span></code></pre></div>
+<p>在其他工具链下，{fmt} 会退回到直接构建模块的方式，
+这适用于 <code>FetchContent</code> 和 <code>add_subdirectory</code>，但不会安装
+<code>fmt::fmt-module</code>。该回退方式不适用于 GCC。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>With other toolchains, {fmt} falls back to building the module directly, which
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>works with `FetchContent` and `add_subdirectory` but doesn't install
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>`fmt::fmt-module`. The fallback is not available with GCC.
+</span></code></pre></div>
+<h2 id="_4">安装<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>原文标题：Installation</p>
+</blockquote>
+<h2 id="debianubuntu">Debian/Ubuntu<a class="headerlink" href="#debianubuntu" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>原文标题：Debian/Ubuntu</p>
+</blockquote>
+<p>在 Debian、Ubuntu 或任何其他基于 Debian 的 Linux 发行版上
+安装 {fmt}，请使用以下命令：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>To install {fmt} on Debian, Ubuntu, or any other Debian-based Linux
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>distribution, use the following command:
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>apt install libfmt-dev
+</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>    apt install libfmt-dev
+</span></code></pre></div>
+<h2 id="homebrew">Homebrew<a class="headerlink" href="#homebrew" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>原文标题：Homebrew</p>
+</blockquote>
+<p>在 macOS 上使用 <a href="https://brew.sh/">Homebrew</a> 安装 {fmt}：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>Install {fmt} on macOS using [Homebrew](https://brew.sh/):
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>brew install fmt
+</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>    brew install fmt
+</span></code></pre></div>
+<h2 id="conda">Conda<a class="headerlink" href="#conda" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>原文标题：Conda</p>
+</blockquote>
+<p>在 Linux、macOS 和 Windows 上使用 <a href="https://docs.conda.io/en/latest/">Conda</a> 安装 {fmt}，采用其 <a href="https://github.com/conda-forge/fmt-feedstock">conda-forge 软件包</a>：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>Install {fmt} on Linux, macOS, and Windows with [Conda](
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>https://docs.conda.io/en/latest/), using its [conda-forge package](
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>https://github.com/conda-forge/fmt-feedstock):
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>conda install -c conda-forge fmt
+</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>    conda install -c conda-forge fmt
+</span></code></pre></div>
+<h2 id="vcpkg">vcpkg<a class="headerlink" href="#vcpkg" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>原文标题：vcpkg</p>
+</blockquote>
+<p>使用 vcpkg 包管理器下载并安装 {fmt}：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>Download and install {fmt} using the vcpkg package manager:
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>git clone https://github.com/Microsoft/vcpkg.git
+cd vcpkg
+./bootstrap-vcpkg.sh
+./vcpkg integrate install
+./vcpkg install fmt
+</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>    git clone https://github.com/Microsoft/vcpkg.git
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>    cd vcpkg
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>    ./bootstrap-vcpkg.sh
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>    ./vcpkg integrate install
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>    ./vcpkg install fmt
+</span></code></pre></div>
+<!-- The fmt package in vcpkg is kept up to date by Microsoft team members and
+community contributors. If the version is out of date, please [create an
+issue or pull request](https://github.com/Microsoft/vcpkg) on the vcpkg
+repository. -->
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>&lt;!-- The fmt package in vcpkg is kept up to date by Microsoft team members and
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>community contributors. If the version is out of date, please [create an
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>issue or pull request](https://github.com/Microsoft/vcpkg) on the vcpkg
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>repository. --&gt;
+</span></code></pre></div>
+<h2 id="conan">Conan<a class="headerlink" href="#conan" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>原文标题：Conan</p>
+</blockquote>
+<p>您可以使用 <a href="https://conan.io/">Conan</a> 包管理器下载并安装 {fmt}：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>You can download and install {fmt} using the [Conan](https://conan.io/) package manager:
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>conan install -r conancenter --requires="fmt/[*]" --build=missing
+</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>    conan install -r conancenter --requires="fmt/[*]" --build=missing
+</span></code></pre></div>
+<!-- The {fmt} package in Conan Center is maintained by
+[ConanCenterIndex](https://github.com/conan-io/conan-center-index) community.
+If the version is out of date or the package does not work,
+please create an issue or pull request on the Conan Center Index repository. -->
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>&lt;!-- The {fmt} package in Conan Center is maintained by
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>[ConanCenterIndex](https://github.com/conan-io/conan-center-index) community.
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>If the version is out of date or the package does not work,
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>please create an issue or pull request on the Conan Center Index repository. --&gt;
+</span></code></pre></div>
+<h2 id="printf">从 <code>printf</code> 迁移<a class="headerlink" href="#printf" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>原文标题：Migrating from <code>printf</code></p>
+</blockquote>
+<p><a href="https://clang.llvm.org/extra/clang-tidy/">clang-tidy</a> v18 提供了
+<a href="https://clang.llvm.org/extra/clang-tidy/checks/modernize/use-std-print.html">modernize-use-std-print</a>
+检查项，经配置后可将 <code>printf</code> 与
+<code>fprintf</code> 的调用转换为 <code>fmt::print</code>。（默认转换为
+<code>std::print</code>。）</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>[clang-tidy](https://clang.llvm.org/extra/clang-tidy/) v18 provides the
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>[modernize-use-std-print](https://clang.llvm.org/extra/clang-tidy/checks/modernize/use-std-print.html)
+</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>check that is capable of converting occurrences of `printf` and
+</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a>`fprintf` to `fmt::print` if configured to do so. (By default it
+</span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a>converts to `std::print`.)
+</span></code></pre></div>
+<h2 id="_5">从源码构建<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>原文标题：Building from Source</p>
+</blockquote>
+<p>CMake 的工作方式是生成原生 makefile 或工程文件，
+供您所选的编译器环境使用。典型工作流程
+从以下命令开始：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>CMake works by generating native makefiles or project files that can be
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>used in the compiler environment of your choice. The typical workflow
+</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>starts with:
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>mkdir build  # Create a directory to hold the build output.
+cd build
+cmake ..     # Generate native build scripts.
+</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>    mkdir build  # Create a directory to hold the build output.
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>    cd build
+</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>    cmake ..     # Generate native build scripts.
+</span></code></pre></div>
+<p>在 <code>fmt</code> 仓库根目录下运行。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>run in the `fmt` repository.
+</span></code></pre></div>
+<p>在类 Unix 系统上，当前目录此时应已生成 Makefile，
+随后运行 <code>make</code> 即可构建该库。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>If you are on a Unix-like system, you should now see a Makefile in the
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>current directory. Now you can build the library by running `make`.
+</span></code></pre></div>
+<p>构建完成后，可运行 <code>make test</code> 执行测试。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>Once the library has been built you can invoke `make test` to run the tests.
+</span></code></pre></div>
+<p>可通过 <code>FMT_TEST</code>
+CMake 选项控制是否生成 make <code>test</code> 目标。当您将 fmt 作为子目录引入
+项目、但不想让 fmt 的测试进入您的 <code>test</code> 目标时，
+该选项会很有用。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>You can control generation of the make `test` target with the `FMT_TEST`
+</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>CMake option. This can be useful if you include fmt as a subdirectory in
+</span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a>your project but don't want to add fmt's tests to your `test` target.
+</span></code></pre></div>
+<p>要构建动态库，请将 <code>BUILD_SHARED_LIBS</code> CMake 变量设为 <code>TRUE</code>：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>To build a shared library set the `BUILD_SHARED_LIBS` CMake variable to `TRUE`:
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>cmake -DBUILD_SHARED_LIBS=TRUE ..
+</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>    cmake -DBUILD_SHARED_LIBS=TRUE ..
+</span></code></pre></div>
+<p>要构建带位置无关代码的静态库（例如用于
+链接到其他动态库，如 Python 扩展），请将
+<code>CMAKE_POSITION_INDEPENDENT_CODE</code> CMake 变量设为 <code>TRUE</code>：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>To build a static library with position-independent code (e.g. for
+</span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>linking it into another shared library such as a Python extension), set the
+</span><span id="__span-42-3"><a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a>`CMAKE_POSITION_INDEPENDENT_CODE` CMake variable to `TRUE`:
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>cmake -DCMAKE_POSITION_INDEPENDENT_CODE=TRUE ..
+</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>    cmake -DCMAKE_POSITION_INDEPENDENT_CODE=TRUE ..
+</span></code></pre></div>
+<p>构建完成后，在类 Unix 系统上运行 <code>sudo make install</code> 即可安装。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>After building the library you can install it on a Unix-like system by
+</span><span id="__span-44-2"><a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a>running `sudo make install`.
+</span></code></pre></div>
+<h2 id="_6">构建文档<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>原文标题：Building the Docs</p>
+</blockquote>
+<p>构建文档需要系统中安装以下软件：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>To build the documentation you need the following software installed on
+</span><span id="__span-45-2"><a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a>your system:
+</span></code></pre></div>
+<ul>
+<li><a href="https://www.python.org/">Python</a></li>
+<li><a href="http://www.stack.nl/~dimitri/doxygen/">Doxygen</a></li>
+<li><a href="https://www.mkdocs.org/">MkDocs</a>，以及 <code>mkdocs-material</code>、<code>mkdocstrings</code>、
+  <code>pymdown-extensions</code> 和 <code>mike</code></li>
+</ul>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>- [Python](https://www.python.org/)
+</span><span id="__span-46-2"><a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a>- [Doxygen](http://www.stack.nl/~dimitri/doxygen/)
+</span><span id="__span-46-3"><a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a>- [MkDocs](https://www.mkdocs.org/) with `mkdocs-material`, `mkdocstrings`,
+</span><span id="__span-46-4"><a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a>  `pymdown-extensions` and `mike`
+</span></code></pre></div>
+<p>先按上一节所述用 CMake 生成 makefile 或工程文件，
+然后编译 <code>doc</code> 目标/工程，例如：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>First generate makefiles or project files using CMake as described in
+</span><span id="__span-47-2"><a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a>the previous section. Then compile the `doc` target/project, for example:
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>make doc
+</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>    make doc
+</span></code></pre></div>
+<p>该命令会在 <code>doc/html</code> 下生成 HTML 文档。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>This will generate the HTML documentation in `doc/html`.
+</span></code></pre></div>
+<h2 id="_7">构建系统<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>原文标题：Build Systems</p>
+</blockquote>
+<h2 id="build2">build2<a class="headerlink" href="#build2" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>原文标题：build2</p>
+</blockquote>
+<p>您可以使用 <a href="https://build2.org">build2</a>（一个依赖管理器兼
+构建系统）来使用 {fmt}。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>You can use [build2](https://build2.org), a dependency manager and a build
+</span><span id="__span-50-2"><a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a>system, to use {fmt}.
+</span></code></pre></div>
+<p>目前该软件包可在以下包仓库中获取：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>Currently this package is available in these package repositories:
+</span></code></pre></div>
+<ul>
+<li><a href="https://cppget.org/fmt/">https://cppget.org/fmt/</a>：已发布的正式版本。</li>
+<li><a href="https://github.com/build2-packaging/fmt">https://github.com/build2-packaging/fmt</a>：未发布或自定义版本。</li>
+</ul>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>- &lt;https://cppget.org/fmt/&gt; for released and published versions.
+</span><span id="__span-52-2"><a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a>- &lt;https://github.com/build2-packaging/fmt&gt; for unreleased or custom versions.
+</span></code></pre></div>
+<p><strong>用法：</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a>**Usage:**
+</span></code></pre></div>
+<ul>
+<li><code>build2</code> 包名：<code>fmt</code></li>
+<li>库目标名：<code>lib{fmt}</code></li>
+</ul>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>- `build2` package name: `fmt`
+</span><span id="__span-54-2"><a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a>- Library target name: `lib{fmt}`
+</span></code></pre></div>
+<p>要让您的 <code>build2</code> 项目依赖 <code>fmt</code>：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a>To make your `build2` project depend on `fmt`:
+</span></code></pre></div>
+<ul>
+<li>将下列仓库之一加入您的配置；若尚未添加，
+  也可写入 <code>repositories.manifest</code>：</li>
+</ul>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-56-1"><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a>- Add one of the repositories to your configurations, or in your
+</span><span id="__span-56-2"><a id="__codelineno-56-2" name="__codelineno-56-2" href="#__codelineno-56-2"></a>  `repositories.manifest`, if not already there:
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>    :
+    role: prerequisite
+    location: https://pkg.cppget.org/1/stable
+</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-57-1"><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a>        :
+</span><span id="__span-57-2"><a id="__codelineno-57-2" name="__codelineno-57-2" href="#__codelineno-57-2"></a>        role: prerequisite
+</span><span id="__span-57-3"><a id="__codelineno-57-3" name="__codelineno-57-3" href="#__codelineno-57-3"></a>        location: https://pkg.cppget.org/1/stable
+</span></code></pre></div>
+<ul>
+<li>在 <code>manifest</code> 文件中添加该包依赖
+  （以版本 10 为例）：</li>
+</ul>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-58-1"><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a>- Add this package as a dependency to your `manifest` file (example
+</span><span id="__span-58-2"><a id="__codelineno-58-2" name="__codelineno-58-2" href="#__codelineno-58-2"></a>  for version 10):
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>    depends: fmt ~10.0.0
+</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-59-1"><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a>        depends: fmt ~10.0.0
+</span></code></pre></div>
+<ul>
+<li>在相应的 <code>buildfile</code> 中导入目标，并将其作为您自己目标的
+  前置依赖来使用 <code>fmt</code>：</li>
+</ul>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-60-1"><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a>- Import the target and use it as a prerequisite to your own target
+</span><span id="__span-60-2"><a id="__codelineno-60-2" name="__codelineno-60-2" href="#__codelineno-60-2"></a>  using `fmt` in the appropriate `buildfile`:
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>    import fmt = fmt%lib{fmt}
+    lib{mylib} : cxx{**} ... $fmt
+</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-61-1"><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a>        import fmt = fmt%lib{fmt}
+</span><span id="__span-61-2"><a id="__codelineno-61-2" name="__codelineno-61-2" href="#__codelineno-61-2"></a>        lib{mylib} : cxx{**} ... $fmt
+</span></code></pre></div>
+<p>然后照常使用 <code>b</code> 或 <code>bdep update</code> 构建项目。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-62-1"><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a>Then build your project as usual with `b` or `bdep update`.
+</span></code></pre></div>
+<h2 id="meson">Meson<a class="headerlink" href="#meson" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>原文标题：Meson</p>
+</blockquote>
+<p><a href="https://mesonbuild.com/Wrapdb-projects.html">Meson WrapDB</a> 收录了
+<code>fmt</code>
+软件包。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-63-1"><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a>[Meson WrapDB](https://mesonbuild.com/Wrapdb-projects.html) includes an `fmt`
+</span><span id="__span-63-2"><a id="__codelineno-63-2" name="__codelineno-63-2" href="#__codelineno-63-2"></a>package.
+</span></code></pre></div>
+<p><strong>用法：</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-64-1"><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a>**Usage:**
+</span></code></pre></div>
+<ul>
+<li>运行以下命令从 WrapDB 安装 <code>fmt</code>
+  子项目：</li>
+</ul>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-65-1"><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a>- Install the `fmt` subproject from the WrapDB by running:
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>    meson wrap install fmt
+</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-66-1"><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a>        meson wrap install fmt
+</span></code></pre></div>
+<p>（在您的项目根目录下执行。）</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-67-1"><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a>  from the root of your project.
+</span></code></pre></div>
+<ul>
+<li>在您项目的 <code>meson.build</code> 文件中，
+  为新子项目添加条目：</li>
+</ul>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-68-1"><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a>- In your project's `meson.build` file, add an entry for the new subproject:
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>    fmt = subproject('fmt')
+    fmt_dep = fmt.get_variable('fmt_dep')
+</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-69-1"><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a>        fmt = subproject('fmt')
+</span><span id="__span-69-2"><a id="__codelineno-69-2" name="__codelineno-69-2" href="#__codelineno-69-2"></a>        fmt_dep = fmt.get_variable('fmt_dep')
+</span></code></pre></div>
+<ul>
+<li>包含新的依赖对象以链接 fmt：</li>
+</ul>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-70-1"><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a>- Include the new dependency object to link with fmt:
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>    my_build_target = executable(
+      'name', 'src/main.cc', dependencies: [fmt_dep])
+</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-71-1"><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a>        my_build_target = executable(
+</span><span id="__span-71-2"><a id="__codelineno-71-2" name="__codelineno-71-2" href="#__codelineno-71-2"></a>          'name', 'src/main.cc', dependencies: [fmt_dep])
+</span></code></pre></div>
+<p><strong>选项：</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-72-1"><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a>**Options:**
+</span></code></pre></div>
+<p>如有需要，{fmt} 可构建为静态库，
+或作为仅头文件库使用。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-73-1"><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a>If desired, {fmt} can be built as a static library, or as a header-only library.
+</span></code></pre></div>
+<p>静态构建请使用以下子项目定义：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-74-1"><a id="__codelineno-74-1" name="__codelineno-74-1" href="#__codelineno-74-1"></a>For a static build, use the following subproject definition:
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>fmt = subproject('fmt', default_options: 'default_library=static')
+fmt_dep = fmt.get_variable('fmt_dep')
+</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-75-1"><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a>    fmt = subproject('fmt', default_options: 'default_library=static')
+</span><span id="__span-75-2"><a id="__codelineno-75-2" name="__codelineno-75-2" href="#__codelineno-75-2"></a>    fmt_dep = fmt.get_variable('fmt_dep')
+</span></code></pre></div>
+<p>仅头文件版本请使用：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-76-1"><a id="__codelineno-76-1" name="__codelineno-76-1" href="#__codelineno-76-1"></a>For the header-only version, use:
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>fmt = subproject('fmt', default_options: ['header-only=true'])
+fmt_dep = fmt.get_variable('fmt_header_only_dep')
+</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-77-1"><a id="__codelineno-77-1" name="__codelineno-77-1" href="#__codelineno-77-1"></a>    fmt = subproject('fmt', default_options: ['header-only=true'])
+</span><span id="__span-77-2"><a id="__codelineno-77-2" name="__codelineno-77-2" href="#__codelineno-77-2"></a>    fmt_dep = fmt.get_variable('fmt_header_only_dep')
+</span></code></pre></div>
+<h2 id="android-ndk">Android NDK<a class="headerlink" href="#android-ndk" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>原文标题：Android NDK</p>
+</blockquote>
+<p>{fmt} 提供 <a href="https://github.com/fmtlib/fmt/blob/master/support/Android.mk">Android.mk 文件</a>，可用于
+配合 <a href="https://developer.android.com/tools/sdk/ndk/index.html">Android NDK</a> 构建该库。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-78-1"><a id="__codelineno-78-1" name="__codelineno-78-1" href="#__codelineno-78-1"></a>{fmt} provides [Android.mk file](
+</span><span id="__span-78-2"><a id="__codelineno-78-2" name="__codelineno-78-2" href="#__codelineno-78-2"></a>https://github.com/fmtlib/fmt/blob/master/support/Android.mk) that can be used
+</span><span id="__span-78-3"><a id="__codelineno-78-3" name="__codelineno-78-3" href="#__codelineno-78-3"></a>to build the library with [Android NDK](
+</span><span id="__span-78-4"><a id="__codelineno-78-4" name="__codelineno-78-4" href="#__codelineno-78-4"></a>https://developer.android.com/tools/sdk/ndk/index.html).
+</span></code></pre></div>
+<h2 id="_8">其他<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>原文标题：Other</p>
+</blockquote>
+<p>要将 {fmt} 库用于任何其他构建系统，请将
+<code>include/fmt/core.h</code>、<code>include/fmt/format.h</code>、<code>include/fmt/format-inl.h</code>、
+<code>src/format.cc</code> 以及（可选的）其他头文件从<a href="https://github.com/fmtlib/fmt/releases">发布归档</a>或 <a href="https://github.com/fmtlib/fmt">git 仓库</a>添加到您的项目中，
+将 <code>include</code> 加入头文件搜索目录，
+并确保 <code>src/format.cc</code> 与您的代码一同编译链接。</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-79-1"><a id="__codelineno-79-1" name="__codelineno-79-1" href="#__codelineno-79-1"></a>To use the {fmt} library with any other build system, add
+</span><span id="__span-79-2"><a id="__codelineno-79-2" name="__codelineno-79-2" href="#__codelineno-79-2"></a>`include/fmt/core.h`, `include/fmt/format.h`, `include/fmt/format-inl.h`,
+</span><span id="__span-79-3"><a id="__codelineno-79-3" name="__codelineno-79-3" href="#__codelineno-79-3"></a>`src/format.cc` and optionally other headers from a [release archive](
+</span><span id="__span-79-4"><a id="__codelineno-79-4" name="__codelineno-79-4" href="#__codelineno-79-4"></a>https://github.com/fmtlib/fmt/releases) or the [git repository](
+</span><span id="__span-79-5"><a id="__codelineno-79-5" name="__codelineno-79-5" href="#__codelineno-79-5"></a>https://github.com/fmtlib/fmt) to your project, add `include` to include
+</span><span id="__span-79-6"><a id="__codelineno-79-6" name="__codelineno-79-6" href="#__codelineno-79-6"></a>directories and make sure `src/format.cc` is compiled and linked with your code.
+</span></code></pre></div>
+<hr />
+<p><em>对照段落数：98（代码块未计入）</em></p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年11月18日 20:16:10 UTC">2026年11月18日</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      基于 fmtlib/fmt 文档翻译，遵循 MIT License
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/fmtlib/fmt" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://discord.gg/fmt" target="_blank" rel="noopener" title="discord.gg" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M492.5 69.8c-.2-.3-.4-.6-.8-.7-38.1-17.5-78.4-30-119.7-37.1-.4-.1-.8 0-1.1.1s-.6.4-.8.8c-5.5 9.9-10.5 20.2-14.9 30.6-44.6-6.8-89.9-6.8-134.4 0-4.5-10.5-9.5-20.7-15.1-30.6-.2-.3-.5-.6-.8-.8s-.7-.2-1.1-.2C162.5 39 122.2 51.5 84.1 69c-.3.1-.6.4-.8.7C7.1 183.5-13.8 294.6-3.6 404.2c0 .3.1.5.2.8s.3.4.5.6c44.4 32.9 94 58 146.8 74.2.4.1.8.1 1.1 0s.7-.4.9-.7c11.3-15.4 21.4-31.8 30-48.8.1-.2.2-.5.2-.8s0-.5-.1-.8-.2-.5-.4-.6-.4-.3-.7-.4c-15.8-6.1-31.2-13.4-45.9-21.9-.3-.2-.5-.4-.7-.6s-.3-.6-.3-.9 0-.6.2-.9.3-.5.6-.7c3.1-2.3 6.2-4.7 9.1-7.1.3-.2.6-.4.9-.4s.7 0 1 .1c96.2 43.9 200.4 43.9 295.5 0 .3-.1.7-.2 1-.2s.7.2.9.4c2.9 2.4 6 4.9 9.1 7.2.2.2.4.4.6.7s.2.6.2.9-.1.6-.3.9-.4.5-.6.6c-14.7 8.6-30 15.9-45.9 21.8-.2.1-.5.2-.7.4s-.3.4-.4.7-.1.5-.1.8.1.5.2.8c8.8 17 18.8 33.3 30 48.8.2.3.6.6.9.7s.8.1 1.1 0c52.9-16.2 102.6-41.3 147.1-74.2.2-.2.4-.4.5-.6s.2-.5.2-.8c12.3-126.8-20.5-236.9-86.9-334.5zm-302 267.7c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.2-52.8 59.2m195.4 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.2-52.8 59.2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "toc.integrate"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="../../assets/js/bilingual-toggle.js"></script>
+      
+        <script src="../../assets/js/version-switcher.js"></script>
+      
+        <script src="../../assets/js/analytics.js"></script>
+      
+    
+  </body>
+</html>

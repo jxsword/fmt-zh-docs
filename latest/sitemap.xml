@@ -1,23 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://fmt-zh.example.com/latest/</loc>
+         <loc>https://jxsword.github.io/fmt-zh-docs/latest/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>https://fmt-zh.example.com/latest/ChangeLog-old/</loc>
+         <loc>https://jxsword.github.io/fmt-zh-docs/latest/ChangeLog-old/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>https://fmt-zh.example.com/latest/api/</loc>
+         <loc>https://jxsword.github.io/fmt-zh-docs/latest/api/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>https://fmt-zh.example.com/latest/get-started/</loc>
+         <loc>https://jxsword.github.io/fmt-zh-docs/latest/get-started/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
     <url>
-         <loc>https://fmt-zh.example.com/latest/syntax/</loc>
+         <loc>https://jxsword.github.io/fmt-zh-docs/latest/syntax/</loc>
+         <lastmod>2026-11-18</lastmod>
+    </url>
+    <url>
+         <loc>https://jxsword.github.io/fmt-zh-docs/latest/bilingual/</loc>
+         <lastmod>2026-11-18</lastmod>
+    </url>
+    <url>
+         <loc>https://jxsword.github.io/fmt-zh-docs/latest/bilingual/about/</loc>
+         <lastmod>2026-11-18</lastmod>
+    </url>
+    <url>
+         <loc>https://jxsword.github.io/fmt-zh-docs/latest/bilingual/api/</loc>
+         <lastmod>2026-11-18</lastmod>
+    </url>
+    <url>
+         <loc>https://jxsword.github.io/fmt-zh-docs/latest/bilingual/get-started/</loc>
+         <lastmod>2026-11-18</lastmod>
+    </url>
+    <url>
+         <loc>https://jxsword.github.io/fmt-zh-docs/latest/bilingual/syntax/</loc>
          <lastmod>2026-11-18</lastmod>
     </url>
 </urlset>

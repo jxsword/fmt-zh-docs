@@ -1,0 +1,122 @@
+site_name: fmt 中文文档
+site_description: "{fmt} 库官方文档中文翻译版"
+site_author: "fmt 中文文档翻译组"
+site_url: "https://fmt-zh.example.com"
+repo_url: "https://github.com/your-org/fmt-zh-docs"
+repo_name: "fmt-zh-docs"
+edit_uri: "edit/main/zh/"
+copyright: "基于 fmtlib/fmt 文档翻译，遵循 MIT License"
+
+theme:
+  name: material
+  language: zh
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: 切换到深色模式
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: 切换到浅色模式
+  font:
+    text: Noto Sans SC
+    code: JetBrains Mono
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - toc.integrate
+
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+      separator: '[\s\u200b\-_,:;.!?，。！？、；：]+'
+      prebuild_index: true
+  - mike:
+      version_selector: true
+      deploy_prefix: ''
+      alias_type: symlink
+  - pdf-export:
+      enabled: !ENV [CI, false]
+      output_dir: pdf/
+      css_path: assets/pdf-export.css
+  - git-revision-date-localized:
+      enabled: true
+      type: date
+      locale: zh
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - admonition
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+      toc_depth: 3
+
+extra:
+  version:
+    provider: mike
+  analytics:
+    provider: google
+    property: G-XXXXXXXXXX
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/fmtlib/fmt
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/fmt
+  generator: false
+  alternate:
+    - name: English (Original)
+      link: https://fmt.dev/latest/
+      lang: en
+
+extra_css:
+  - assets/css/custom.css
+  - assets/css/bilingual.css
+
+extra_javascript:
+  - assets/js/bilingual-toggle.js
+  - assets/js/version-switcher.js
+  - assets/js/analytics.js
+
+nav:
+  - 首页: index.md
+  - 快速开始: get-started.md
+  - 格式语法: syntax.md
+  - API 参考: api.md
+  - 更新日志: ChangeLog-old.md
+
+# 版本配置（由 mike 管理）
+# 部署时运行: mike deploy --push --update-aliases latest 12.2

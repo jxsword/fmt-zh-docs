@@ -1,0 +1,68 @@
+# fmt-zh-docs gitignore
+
+# Build outputs
+site/
+pdf/
+*.pdf
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.env
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# ZCode 工具状态
+.mimosa/
+
+# Translation state (keep .translation-state.json but ignore backups)
+.translation-state.json.bak
+.tm.sqlite
+.tm.sqlite-wal
+.tm.sqlite-shm
+
+# Logs
+*.log
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# mkdocs
+.mkdocs.yml.cache
+
+# Test coverage
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+
+# Type checking
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Ruff
+.ruff_cache/
+
+# Translation memory (optional, can be committed)
+# .tm.sqlite
+
+# LLM API keys (never commit)
+*.key
+*.secret

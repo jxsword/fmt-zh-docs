@@ -1,0 +1,106 @@
+/* Bilingual mode styles for fmt Chinese documentation */
+
+/* Bilingual mode: show original text under translated paragraphs */
+body.bilingual-mode .md-content p[data-original],
+body.bilingual-mode .md-content li[data-original],
+body.bilingual-mode .md-content td[data-original],
+body.bilingual-mode .md-content h1[data-original],
+body.bilingual-mode .md-content h2[data-original],
+body.bilingual-mode .md-content h3[data-original],
+body.bilingual-mode .md-content h4[data-original],
+body.bilingual-mode .md-content h5[data-original],
+body.bilingual-mode .md-content h6[data-original] {
+  position: relative;
+}
+
+body.bilingual-mode .md-content p[data-original]:hover::after,
+body.bilingual-mode .md-content li[data-original]:hover::after,
+body.bilingual-mode .md-content td[data-original]:hover::after {
+  content: attr(data-original);
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: 100;
+  max-width: 42rem;
+  padding: 0.6rem 0.8rem;
+  background: #1e293b;
+  color: #e2e8f0;
+  font-size: 0.85em;
+  line-height: 1.5;
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  white-space: pre-wrap;
+  pointer-events: none;
+}
+
+/* Overlay mode (independent bilingual comparison page) */
+.bilingual-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  overflow: auto;
+  padding: 2rem 1rem;
+  background: var(--md-default-bg-color, #fff);
+}
+
+.bilingual-overlay.active {
+  display: block;
+}
+
+.bilingual-overlay .content {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+.bilingual-overlay .close-overlay {
+  position: sticky;
+  top: 0;
+  float: right;
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--md-default-fg-color--lightest, #ddd);
+  border-radius: 6px;
+  background: var(--md-primary-fg-color, #3b82f6);
+  color: var(--md-primary-bg-color, #fff);
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+/* Side-by-side rows */
+.bilingual-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1rem 0;
+  padding: 0.8rem 1rem;
+  background: var(--md-code-bg-color, #f6f8fa);
+  border-radius: 8px;
+  font-size: 0.92em;
+}
+
+.bilingual-row .original {
+  color: var(--md-default-fg-color--light, #57606a);
+  border-right: 1px dashed var(--md-default-fg-color--lightest, #d0d7de);
+  padding-right: 1rem;
+}
+
+.bilingual-row .translated {
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .bilingual-row {
+    grid-template-columns: 1fr;
+  }
+  .bilingual-row .original {
+    border-right: none;
+    border-bottom: 1px dashed var(--md-default-fg-color--lightest, #d0d7de);
+    padding-right: 0;
+    padding-bottom: 0.5rem;
+  }
+}
+
+/* Code blocks are never shown bilingually */
+body.bilingual-mode pre[data-original]::after {
+  content: none;
+}

@@ -1,0 +1,201 @@
+# fmt 中文文档翻译质量度量指标
+
+# 自动化指标（CI 每次运行收集）
+automated_metrics:
+  terminology_consistency_rate:
+    name: "术语一致性通过率"
+    description: "术语表术语在译文中统一翻译的比例"
+    target: ">= 99%"
+    measure: "validate_translation.py 术语检查通过 / 总术语出现次数"
+    threshold_warning: 95
+    threshold_error: 90
+
+  code_block_integrity_rate:
+    name: "代码块完整性"
+    description: "译文代码块与原文完全一致的比例"
+    target: "100%"
+    measure: "代码块 hash 对比一致 / 总代码块数"
+    threshold_warning: 99.9
+    threshold_error: 99
+
+  inline_code_integrity_rate:
+    name: "内联代码完整性"
+    description: "译文内联代码与原文完全一致的比例"
+    target: "100%"
+    measure: "内联代码对比一致 / 总内联代码数"
+    threshold_warning: 99.9
+    threshold_error: 99
+
+  html_tag_integrity_rate:
+    name: "HTML 标签完整性"
+    description: "译文 HTML 标签与原文完全一致的比例"
+    target: "100%"
+    measure: "HTML 标签对比一致 / 总 HTML 标签数"
+    threshold_warning: 99.9
+    threshold_error: 99
+
+  url_integrity_rate:
+    name: "链接 URL 完整性"
+    description: "译文链接 URL 与原文完全一致的比例"
+    target: "100%"
+    measure: "链接 URL 对比一致 / 总链接数"
+    threshold_warning: 99.9
+    threshold_error: 99
+
+  structure_integrity_rate:
+    name: "结构完整性"
+    description: "标题层级、列表、表格结构 AST 对比一致"
+    target: "100%"
+    measure: "结构元素对比一致 / 总结构元素数"
+    threshold_warning: 99.9
+    threshold_error: 99
+
+  placeholder_restoration_rate:
+    name: "占位符还原率"
+    description: "PROTECTED_* 占位符完全还原的比例"
+    target: "100%"
+    measure: "无残留占位符文件 / 总文件数"
+    threshold_warning: 100
+    threshold_error: 100
+
+# 人工抽检指标（每版本发布前）
+human_metrics:
+  human_sampling_pass_rate:
+    name: "人工抽检通过率"
+    description: "随机抽取 50 段，专业评审通过的比例"
+    target: ">= 95%"
+    measure: "评审通过段落数 / 50"
+    sample_size: 50
+    threshold_warning: 90
+    threshold_error: 85
+
+  translation_fluency_score:
+    name: "翻译流畅度评分"
+    description: "专业评审对翻译流畅度的打分"
+    target: ">= 4.5/5"
+    measure: "平均评分"
+    threshold_warning: 4.0
+    threshold_error: 3.5
+
+  terminology_accuracy_score:
+    name: "术语准确性评分"
+    description: "专业评审对术语翻译准确性的打分"
+    target: ">= 4.8/5"
+    measure: "平均评分"
+    threshold_warning: 4.5
+    threshold_error: 4.0
+
+# 用户反馈指标（持续收集）
+user_metrics:
+  user_feedback_score:
+    name: "用户反馈满意度"
+    description: "GitHub Issues/讨论区翻译相关反馈情感分析"
+    target: ">= 4.5/5"
+    measure: "正面反馈占比"
+    threshold_warning: 4.0
+    threshold_error: 3.5
+
+  issue_resolution_time:
+    name: "问题解决时间"
+    description: "翻译相关 Issue 从创建到关闭的平均时间"
+    target: "<= 48 小时"
+    measure: "平均解决时间"
+    threshold_warning: 72
+    threshold_error: 168
+
+  issue_recurrence_rate:
+    name: "问题复发率"
+    description: "同类翻译错误复发的比例"
+    target: "0%"
+    measure: "复发错误数 / 总错误数"
+    threshold_warning: 5
+    threshold_error: 10
+
+# 效率指标
+efficiency_metrics:
+  incremental_translation_coverage:
+    name: "增量翻译覆盖率"
+    description: "自动翻译通过校验段落 / 总需翻译段落"
+    target: ">= 90%"
+    measure: "自动通过段落 / 待翻译段落"
+    threshold_warning: 80
+    threshold_error: 70
+
+  tm_hit_rate:
+    name: "翻译记忆命中率"
+    description: "TM 复用翻译 / 总翻译请求"
+    target: ">= 30%"
+    measure: "TM 复用数 / 总请求数"
+    threshold_warning: 20
+    threshold_error: 10
+
+  llm_cost_per_k_chars:
+    name: "单千字翻译成本"
+    description: "LLM API 调用成本 / 翻译字符数"
+    target: "<= $0.01"
+    measure: "总成本 / 翻译字符数(千)"
+    threshold_warning: 0.02
+    threshold_error: 0.05
+
+  pipeline_duration:
+    name: "流水线耗时"
+    description: "同步+翻译+校验+部署全流程耗时"
+    target: "<= 5 分钟"
+    measure: "流水线总耗时"
+    threshold_warning: 10
+    threshold_error: 20
+
+# 监控告警规则
+alerting_rules:
+  - name: "terminology_consistency_drop"
+    metric: "terminology_consistency_rate"
+    condition: "< 95%"
+    severity: "warning"
+    channels: ["github_issue", "email"]
+
+  - name: "code_block_integrity_fail"
+    metric: "code_block_integrity_rate"
+    condition: "< 100%"
+    severity: "critical"
+    channels: ["github_issue", "email", "slack"]
+
+  - name: "pipeline_failure"
+    metric: "pipeline_status"
+    condition: "failed"
+    severity: "critical"
+    channels: ["github_issue", "email"]
+
+  - name: "stale_translation"
+    metric: "days_since_upstream_update"
+    condition: "> 14"
+    severity: "warning"
+    channels: ["github_issue"]
+
+  - name: "llm_cost_spike"
+    metric: "daily_llm_cost_usd"
+    condition: "> 1.0"
+    severity: "warning"
+    channels: ["email"]
+
+# 仪表盘配置
+dashboard:
+  refresh_interval: "5m"
+  panels:
+    - title: "翻译覆盖率"
+      metric: "translation_coverage_percent"
+      type: "gauge"
+    - title: "术语一致性趋势"
+      metric: "terminology_consistency_rate"
+      type: "timeseries"
+    - title: "流水线状态"
+      metric: "pipeline_status"
+      type: "stat"
+    - title: "LLM 成本趋势"
+      metric: "llm_cost_per_k_chars"
+      type: "timeseries"
+    - title: "用户反馈评分"
+      metric: "user_feedback_score"
+      type: "gauge"
+    - title: "问题解决时间"
+      metric: "issue_resolution_time"
+      type: "timeseries"

@@ -1,0 +1,37 @@
+{#- fmt 文档翻译提示词模板（Jinja2）
+    变量:
+      glossary_text: 术语表相关条目文本（多行 "- en → zh"）
+      context: 前后文段落（可为空）
+      source_text: 待翻译的 Markdown 段落
+      file_name: 源文件名（如 api.md）
+      section: 段落所属章节标题（可为空）
+-#}
+You are a professional technical translator specializing in C++ library documentation.
+Translate the following Markdown segment from English to Simplified Chinese.
+This segment is from the {fmt} library documentation (file: {{ file_name }}{% if section %}, section: {{ section }}{% endif %}).
+
+## Glossary (MUST follow exactly)
+{{ glossary_text }}
+
+## Style rules (MUST follow)
+1. Keep code blocks (```...```), inline code (`...`), HTML tags, URLs, and placeholder tokens
+   like {{ '{{PROTECTED_...' }} completely unchanged.
+2. Keep API names, function/class/macro/header names in English (e.g. fmt::format, FMT_STRING, <fmt/core.h>).
+3. Use the glossary translation for technical terms; on first occurrence you may add the
+   original in parentheses, e.g. 格式字符串（format string）.
+4. Use professional documentation tone: address the reader as 您, the authors as 我们.
+   Avoid colloquialisms.
+5. Use Chinese punctuation in Chinese sentences; keep original punctuation inside code.
+6. Keep Markdown structure intact: heading levels, list markers, table layout, emphasis markers.
+7. Numbers keep Arabic digits; add a space between number and unit (约 20-30 倍).
+
+{% if context %}
+## Context (for reference only, do NOT translate)
+{{ context }}
+{% endif %}
+
+## Source text (translate this only)
+{{ source_text }}
+
+## Output
+Output ONLY the translated Markdown. No explanations, no quotes, no code fences around the whole output.

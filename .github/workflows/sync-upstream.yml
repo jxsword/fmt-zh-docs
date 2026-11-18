@@ -1,0 +1,110 @@
+name: Sync Upstream Documentation
+
+on:
+  schedule:
+    - cron: '0 2 * * 1'  # 每周一凌晨 2 点 (UTC)
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: '指定版本标签 (如 12.2.0)，留空同步 main 分支'
+        required: false
+        type: string
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      commit: ${{ steps.sync.outputs.commit }}
+      version: ${{ steps.sync.outputs.version }}
+      files: ${{ steps.sync.outputs.files }}
+      has_changes: ${{ steps.sync.outputs.has_changes }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Cache pip packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyyaml
+
+      - name: Sync upstream docs
+        id: sync
+        run: |
+          if [ -n "${{ github.event.inputs.tag }}" ]; then
+            echo "Syncing tag: ${{ github.event.inputs.tag }}"
+            python scripts/sync_docs.py --tag "${{ github.event.inputs.tag }}"
+          else
+            echo "Syncing main branch"
+            python scripts/sync_docs.py --init
+          fi
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet source/; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "No changes detected"
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "Changes detected in source/"
+            git diff --stat source/
+          fi
+
+      - name: Create Pull Request
+        if: steps.changes.outputs.has_changes == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: sync/upstream-${{ github.run_id }}
+          title: 'chore: sync upstream fmt docs'
+          body: |
+            Automated sync from fmtlib/fmt@${{ steps.sync.outputs.commit }}
+            
+            **Version**: ${{ steps.sync.outputs.version }}
+            
+            **Files updated**:
+            ${{ steps.sync.outputs.files }}
+          labels: |
+            sync
+            automated
+          commit-message: 'chore: sync upstream fmt docs @${{ steps.sync.outputs.commit }}'
+          add-paths: |
+            source/
+            .translation-state.json
+
+  notify:
+    needs: sync
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create failure issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: '[Auto] Sync upstream failed',
+              body: 'The sync-upstream workflow failed. Please check the workflow run for details.',
+              labels: ['sync', 'failure', 'automated']
+            })

@@ -273,7 +273,9 @@ class TestSyncSince:
         state = json.loads(ctx.state_file.read_text(encoding="utf-8"))
         assert set(state["files"].keys()) == {"api.md", "new.md", "manual.md"}
         assert set(state["archived_files"].keys()) == {"guide.md", "legacy.md"}
-        assert state["archived_files"]["guide.md"]["archived_at"] == "2026-11-19"
+        # archived_at 取 runner 本地时区日期，断言格式而非具体值（CI 为 UTC）
+        import re
+        assert re.match(r"^\d{4}-\d{2}-\d{2}$", state["archived_files"]["guide.md"]["archived_at"])
 
         # api.md 段落迁移：仅被改写的一段 pending，其余保持 translated + 元数据
         api = {s["content"]: s for s in state["files"]["api.md"]["segments"]}

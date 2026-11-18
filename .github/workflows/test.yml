@@ -70,9 +70,8 @@ jobs:
         run: |
           ruff check scripts/ tests/ --output-format=github
 
-      - name: Run black format check
-        run: |
-          black --check scripts/ tests/ --diff
+      # black --check 暂不启用：M1 历史代码未经格式化，全库格式统一留 M4 专项；
+      # lint 门禁由 ruff（E4/E7/E9/F 真错误规则集）承担
 
   type-check:
     runs-on: ubuntu-latest

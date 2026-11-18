@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: fmt 英文原版文档
+    url: https://fmt.dev/latest/
+    about: 英文原文问题请在上游 fmtlib/fmt 仓库反馈
+  - name: fmt 库本身的问题
+    url: https://github.com/fmtlib/fmt/issues
+    about: 与库功能/编译相关的问题请直接反馈给上游项目

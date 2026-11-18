@@ -1,0 +1,54 @@
+name: 翻译问题反馈
+description: 报告 fmt 中文文档的翻译错误或提出改进建议
+title: "[翻译] 简要描述问题"
+labels: ["translation-feedback"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈！按 [DR-008 SLA](https://github.com/jxsword/fmt-zh-docs/blob/main/docs/decision_log.md) 承诺：
+        - **代码/结构错误**（影响使用的）：24 小时内修复部署
+        - **术语不一致**：48 小时内修复并同步术语表
+        - **一般语言问题**：1 周内合并下一批次
+        - 首次响应：2 个工作日内
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: 问题类型（对应 SLA 分级）
+      options:
+        - 代码/结构错误（代码块损坏、链接失效、渲染异常）
+        - 术语错误（术语表译名不一致）
+        - 一般语言问题（语感、表述优化）
+        - 功能建议
+    validations:
+      required: true
+
+  - type: dropdown
+    id: file
+    attributes:
+      label: 涉及页面
+      options:
+        - 首页 (index.md)
+        - 快速开始 (get-started.md)
+        - 格式语法 (syntax.md)
+        - API 参考 (api.md)
+        - 其他/站点全局
+    validations:
+      required: true
+
+  - type: textarea
+    id: location
+    attributes:
+      label: 问题位置
+      description: 章节名、标题或 URL 锚点（如 #compile-time-checks）
+    validations:
+      required: true
+
+  - type: textarea
+    id: detail
+    attributes:
+      label: 问题描述
+      description: 原文、当前译文、期望译文（如有）
+    validations:
+      required: true

@@ -1,8 +1,8 @@
 site_name: fmt 中文文档
 site_description: "{fmt} 库官方文档中文翻译版"
 site_author: "fmt 中文文档翻译组"
-site_url: "https://fmt-zh.example.com"
-repo_url: "https://github.com/your-org/fmt-zh-docs"
+site_url: "https://jxsword.github.io/fmt-zh-docs/"
+repo_url: "https://github.com/jxsword/fmt-zh-docs"
 repo_name: "fmt-zh-docs"
 edit_uri: "edit/main/zh/"
 copyright: "基于 fmtlib/fmt 文档翻译，遵循 MIT License"
@@ -120,6 +120,13 @@ nav:
   - API 参考: api.md
   # DR-014：历史变更日志不翻译，保留英文原文占位页
   - 更新日志（英文原文）: ChangeLog-old.md
+  # DR-005：独立双语对照模式（generate_bilingual.py 自动生成）
+  - 双语对照:
+      - 说明: bilingual/about.md
+      - 首页: bilingual/index.md
+      - 快速开始: bilingual/get-started.md
+      - 格式语法: bilingual/syntax.md
+      - API 参考: bilingual/api.md
 
 # 版本配置（由 mike 管理）
 # 部署时运行: mike deploy --push --update-aliases latest 12.2

@@ -495,3 +495,1631 @@ terms:
     created_at: "2026-11-18"
     approved_by: "init"
     usage_count: 0
+  - en: "decimal number"
+    zh: "十进制数"
+    status: "approved"
+    context: "syntax.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "decimal digit"
+    zh: "十进制数字"
+    status: "approved"
+    context: "syntax.md:api.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "single decimal digit"
+    zh: "单个十进制数字"
+    status: "approved"
+    context: "syntax.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "format string syntax"
+    zh: "格式字符串语法"
+    status: "approved"
+    context: "api.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "format string compilation"
+    zh: "格式字符串编译"
+    status: "approved"
+    context: "api.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "date and time formatting"
+    zh: "日期与时间格式化"
+    status: "approved"
+    context: "api.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "time formatting"
+    zh: "时间格式化"
+    status: "approved"
+    context: "api.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "time zone"
+    zh: "时区"
+    status: "approved"
+    context: "syntax.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "weekday"
+    zh: "星期"
+    status: "approved"
+    context: "syntax.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "week number"
+    zh: "周数"
+    status: "approved"
+    context: "syntax.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "container"
+    zh: "容器"
+    status: "approved"
+    context: "index.md:api.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "core API"
+    zh: "核心 API"
+    status: "approved"
+    context: "api.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "compile-time checks"
+    zh: "编译时检查"
+    status: "approved"
+    context: "api.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "compile-time error"
+    zh: "编译时错误"
+    status: "approved"
+    context: "index.md:syntax.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "runtime error"
+    zh: "运行时错误"
+    status: "approved"
+    context: "api.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "user-defined types"
+    zh: "用户定义类型"
+    status: "approved"
+    context: "api.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "standard library types"
+    zh: "标准库类型"
+    status: "approved"
+    context: "api.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "standard library"
+    zh: "标准库"
+    status: "approved"
+    context: "index.md:api.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "string types"
+    zh: "字符串类型"
+    status: "approved"
+    context: "syntax.md:api.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "character types"
+    zh: "字符类型"
+    status: "approved"
+    context: "syntax.md:api.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "argument lists"
+    zh: "参数列表"
+    status: "approved"
+    context: "api.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "dynamic argument lists"
+    zh: "动态参数列表"
+    status: "approved"
+    context: "api.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "dynamic argument list"
+    zh: "动态参数列表"
+    status: "approved"
+    context: "api.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "formatting functions"
+    zh: "格式化函数"
+    status: "approved"
+    context: "index.md:syntax.md:api.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "insertion operator"
+    zh: "插入运算符"
+    status: "approved"
+    context: "api.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "terminal colors"
+    zh: "终端颜色"
+    status: "approved"
+    context: "api.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "text styles"
+    zh: "文本样式"
+    status: "approved"
+    context: "api.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "system APIs"
+    zh: "系统 API"
+    status: "approved"
+    context: "api.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "memory allocation"
+    zh: "内存分配"
+    status: "approved"
+    context: "index.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "dynamic memory allocation"
+    zh: "动态内存分配"
+    status: "approved"
+    context: "index.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "binary size optimization"
+    zh: "二进制体积优化"
+    status: "approved"
+    context: "api.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "binary size"
+    zh: "二进制体积"
+    status: "approved"
+    context: "api.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "template bloat"
+    zh: "模板膨胀"
+    status: "approved"
+    context: "index.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "module API"
+    zh: "模块 API"
+    status: "approved"
+    context: "api.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "C++ module"
+    zh: "C++ 模块"
+    status: "approved"
+    context: "get-started.md:api.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "exception"
+    zh: "异常"
+    status: "approved"
+    context: "syntax.md:api.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "signed integer"
+    zh: "有符号整数"
+    status: "approved"
+    context: "syntax.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "floating-point values"
+    zh: "浮点值"
+    status: "approved"
+    context: "syntax.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "floating-point number"
+    zh: "浮点数"
+    status: "approved"
+    context: "syntax.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "decimal point"
+    zh: "小数点"
+    status: "approved"
+    context: "syntax.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "user-defined literal"
+    zh: "用户定义字面量"
+    status: "approved"
+    context: "api.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "template parameter"
+    zh: "模板参数"
+    status: "approved"
+    context: "api.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "namespace"
+    zh: "命名空间"
+    status: "approved"
+    context: "api.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "static library"
+    zh: "静态库"
+    status: "approved"
+    context: "get-started.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "package manager"
+    zh: "包管理器"
+    status: "approved"
+    context: "get-started.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "installation"
+    zh: "安装"
+    status: "approved"
+    context: "get-started.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "self-contained"
+    zh: "自包含"
+    status: "approved"
+    context: "index.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "string formatting"
+    zh: "字符串格式化"
+    status: "approved"
+    context: "api.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "numeric formatting"
+    zh: "数值格式化"
+    status: "approved"
+    context: "index.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "safety"
+    zh: "安全性"
+    status: "approved"
+    context: "index.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "memory management"
+    zh: "内存管理"
+    status: "approved"
+    context: "index.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "automatic memory management"
+    zh: "自动内存管理"
+    status: "approved"
+    context: "index.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "formatting library"
+    zh: "格式化库"
+    status: "approved"
+    context: "index.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "formatting facility"
+    zh: "格式化设施"
+    status: "approved"
+    context: "index.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "fill and alignment"
+    zh: "填充与对齐"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "sign option"
+    zh: "符号选项"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "alternate representation"
+    zh: "替代表示"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "leading zero"
+    zh: "前导零"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "length modifier"
+    zh: "长度修饰符"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "conversion specifier"
+    zh: "转换说明符"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "presentation specifier"
+    zh: "呈现说明符"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "field width"
+    zh: "字段宽度"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "minimum width"
+    zh: "最小宽度"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "text alignment"
+    zh: "文本对齐"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "negative zero"
+    zh: "负零"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "uppercase"
+    zh: "大写"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "lowercase"
+    zh: "小写"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "whitespace"
+    zh: "空白字符"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "newline"
+    zh: "换行符"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "quoted string"
+    zh: "带引号字符串"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "debug mode"
+    zh: "调试模式"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "trailing space"
+    zh: "尾随空格"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "manual indexing"
+    zh: "手动索引"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "argument id"
+    zh: "参数 ID"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "nested formatting"
+    zh: "嵌套格式化"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "escaped brace"
+    zh: "转义大括号"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "curly braces"
+    zh: "大括号"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "chrono format specification"
+    zh: "chrono 格式规范"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "date formatting"
+    zh: "日期格式化"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "calendar type"
+    zh: "日历类型"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "local time"
+    zh: "本地时间"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "system clock"
+    zh: "系统时钟"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "epoch"
+    zh: "纪元"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "range format specification"
+    zh: "范围格式规范"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "range and tuple formatting"
+    zh: "范围与元组格式化"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "range specifier"
+    zh: "范围说明符"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "range formatting"
+    zh: "范围格式化"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "key-value pairs"
+    zh: "键值对"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "element separator"
+    zh: "元素分隔符"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "delimiter"
+    zh: "分隔符"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "underlying formatter"
+    zh: "底层格式化器"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "output iterator"
+    zh: "输出迭代器"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "compile-time support"
+    zh: "编译时支持"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "compile-time evaluation"
+    zh: "编译时求值"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "compile-time format string"
+    zh: "编译时格式字符串"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "formatting user-defined types"
+    zh: "用户定义类型格式化"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "null-terminated string"
+    zh: "以空字符结尾的字符串"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "wide string"
+    zh: "宽字符串"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "wide strings"
+    zh: "宽字符串"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "wide character"
+    zh: "宽字符"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "string view"
+    zh: "字符串视图"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "convenience functions"
+    zh: "便捷函数"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "output buffer"
+    zh: "输出缓冲区"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "memory buffer"
+    zh: "内存缓冲区"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "string buffer"
+    zh: "字符串缓冲区"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "output stream"
+    zh: "输出流"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "color formatting"
+    zh: "颜色格式化"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "system errors"
+    zh: "系统错误"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "error codes"
+    zh: "错误码"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "bit-fields"
+    zh: "位域"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "packed structs"
+    zh: "紧凑结构体"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "custom allocators"
+    zh: "自定义分配器"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "stack allocation"
+    zh: "栈上分配"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "code bloat"
+    zh: "代码膨胀"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "configuration options"
+    zh: "配置选项"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "compatibility with C++20 std::format"
+    zh: "与 C++20 std::format 的兼容性"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "utilities"
+    zh: "实用工具"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "deprecated"
+    zh: "已弃用"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "backward compatibility"
+    zh: "向后兼容"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "error handling"
+    zh: "错误处理"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "undefined behavior"
+    zh: "未定义行为"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "unsigned integer"
+    zh: "无符号整数"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "rounding"
+    zh: "舍入"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "decimal separator"
+    zh: "小数点分隔符"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "thousands separator"
+    zh: "千位分隔符"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "deduction guide"
+    zh: "推导指引"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "template specialization"
+    zh: "模板特化"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "type traits"
+    zh: "类型特征"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "variadic template"
+    zh: "可变参数模板"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "function overloading"
+    zh: "函数重载"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "default argument"
+    zh: "默认参数"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "return value"
+    zh: "返回值"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "inline namespace"
+    zh: "内联命名空间"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "forward declaration"
+    zh: "前向声明"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "linkage"
+    zh: "链接"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "symbol visibility"
+    zh: "符号可见性"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "thread safety"
+    zh: "线程安全"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "lifetime"
+    zh: "生命周期"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "compilation speed"
+    zh: "编译速度"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "benchmark"
+    zh: "基准测试"
+    status: "approved"
+    context: "index"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "speedup"
+    zh: "加速比"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "memory usage"
+    zh: "内存占用"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "unicode support"
+    zh: "Unicode 支持"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "portable unicode support"
+    zh: "可移植的 Unicode 支持"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "code page"
+    zh: "代码页"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "localization"
+    zh: "本地化"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "localized formatting"
+    zh: "本地化格式化"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "locale-specific"
+    zh: "区域设置相关"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "internationalization"
+    zh: "国际化"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "dynamic library"
+    zh: "动态库"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "package managers"
+    zh: "包管理器"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "build systems"
+    zh: "构建系统"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "building from source"
+    zh: "从源码构建"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "compiler support"
+    zh: "编译器支持"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "C++11 features"
+    zh: "C++11 特性"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "external dependency"
+    zh: "外部依赖"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "cross-platform"
+    zh: "跨平台"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "platform-specific"
+    zh: "平台相关"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "quick start"
+    zh: "快速开始"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "API reference"
+    zh: "API 参考"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "code example"
+    zh: "代码示例"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "migration guide"
+    zh: "迁移指南"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "safe printf"
+    zh: "安全的 printf"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "migrating from printf"
+    zh: "从 printf 迁移"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "printf-style formatting"
+    zh: "printf 风格格式化"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "argument store"
+    zh: "参数存储"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "type-erased"
+    zh: "类型擦除"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "integer formatting"
+    zh: "整数格式化"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "number formatting"
+    zh: "数字格式化"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "extensibility"
+    zh: "可扩展性"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "portability"
+    zh: "可移植性"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "formatted output"
+    zh: "格式化输出"
+    status: "approved"
+    context: ""
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "alternative representation"
+    zh: "备用表示"
+    status: "approved"
+    context: "syntax.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "base prefix"
+    zh: "前缀"
+    status: "approved"
+    context: "syntax.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "literal brace"
+    zh: "字面花括号"
+    status: "approved"
+    context: "syntax.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "month name"
+    zh: "月份"
+    status: "approved"
+    context: "syntax.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "format API"
+    zh: "格式 API"
+    status: "approved"
+    context: "api.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "legacy compile-time checks"
+    zh: "旧式编译时检查"
+    status: "approved"
+    context: "api.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "binary footprint"
+    zh: "二进制体积"
+    status: "approved"
+    context: "index.md:api.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "shared library"
+    zh: "动态库"
+    status: "approved"
+    context: "get-started.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0
+
+  - en: "format argument"
+    zh: "格式参数"
+    status: "approved"
+    context: "api.md"
+    aliases: []
+    created_at: "2026-11-19"
+    approved_by: "m4-expansion"
+    usage_count: 0

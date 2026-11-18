@@ -1,9 +1,9 @@
 # fmt 中文文档翻译项目
 
-[![Sync Upstream](https://github.com/your-org/fmt-zh-docs/actions/workflows/sync-upstream.yml/badge.svg)](https://github.com/your-org/fmt-zh-docs/actions/workflows/sync-upstream.yml)
-[![Validate Translations](https://github.com/your-org/fmt-zh-docs/actions/workflows/validate.yml/badge.svg)](https://github.com/your-org/fmt-zh-docs/actions/workflows/validate.yml)
-[![Deploy Site](https://github.com/your-org/fmt-zh-docs/actions/workflows/deploy.yml/badge.svg)](https://github.com/your-org/fmt-zh-docs/actions/workflows/deploy.yml)
-[![Tests](https://github.com/your-org/fmt-zh-docs/actions/workflows/test.yml/badge.svg)](https://github.com/your-org/fmt-zh-docs/actions/workflows/test.yml)
+[![Sync Upstream](https://github.com/jxsword/fmt-zh-docs/actions/workflows/sync-upstream.yml/badge.svg)](https://github.com/jxsword/fmt-zh-docs/actions/workflows/sync-upstream.yml)
+[![Validate Translations](https://github.com/jxsword/fmt-zh-docs/actions/workflows/validate.yml/badge.svg)](https://github.com/jxsword/fmt-zh-docs/actions/workflows/validate.yml)
+[![Deploy Site](https://github.com/jxsword/fmt-zh-docs/actions/workflows/deploy.yml/badge.svg)](https://github.com/jxsword/fmt-zh-docs/actions/workflows/deploy.yml)
+[![Tests](https://github.com/jxsword/fmt-zh-docs/actions/workflows/test.yml/badge.svg)](https://github.com/jxsword/fmt-zh-docs/actions/workflows/test.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![fmt version](https://img.shields.io/badge/fmt-12.2-blue.svg)](https://fmt.dev)
 
@@ -50,7 +50,7 @@ zh/
 ### 安装依赖
 
 ```bash
-git clone https://github.com/your-org/fmt-zh-docs.git
+git clone https://github.com/jxsword/fmt-zh-docs.git
 cd fmt-zh-docs
 pip install -r requirements.txt
 ```
@@ -170,8 +170,8 @@ graph LR
 
 ## 📞 联系我们
 
-- **Issues**: [翻译问题报告](https://github.com/your-org/fmt-zh-docs/issues/new?template=translation-report.yml)
-- **Discussions**: [术语讨论、流程建议](https://github.com/your-org/fmt-zh-docs/discussions)
+- **Issues**: [翻译问题报告](https://github.com/jxsword/fmt-zh-docs/issues/new?template=translation-report.yml)
+- **Discussions**: [术语讨论、流程建议](https://github.com/jxsword/fmt-zh-docs/discussions)
 - **Email**: translation@fmt-zh.example.com
 
 ---

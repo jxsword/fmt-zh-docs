@@ -119,12 +119,9 @@ def save_state(state_file: Path, state: TranslationState):
 
 
 def load_state(state_file: Path) -> TranslationState:
-    """从 JSON 载入；旧格式（无 archived_files/excluded）向后兼容。"""
+    """从 JSON 载入；旧格式与额外键（如 excluded_reason）向后兼容。"""
     data = json.loads(state_file.read_text(encoding='utf-8'))
-    files = {}
-    for k, v in data.get('files', {}).items():
-        v.setdefault('excluded', False)
-        files[k] = FileState(**v)
+    files = {k: _fstate_from_dict(v) for k, v in data.get('files', {}).items()}
     return TranslationState(
         upstream_repo=data.get('upstream_repo', ''),
         upstream_commit=data.get('upstream_commit', ''),

@@ -53,4 +53,4 @@
 ---
 
 *看板更新时间：2026-11-19（T-014 按 DR-014 关闭）*  
-*建议使用 [GitHub Projects](https://github.com/your-org/fmt-zh-docs/projects) 进行可视化管理*
+*建议使用 [GitHub Projects](https://github.com/jxsword/fmt-zh-docs/projects) 进行可视化管理*

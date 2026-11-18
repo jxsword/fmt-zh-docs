@@ -18,8 +18,11 @@
           "line_end": 1,
           "metadata": {
             "level": 1,
-            "title": "Format String Syntax"
-          }
+            "title": "Format String Syntax",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-0",
@@ -30,8 +33,11 @@
           "line_start": 3,
           "line_end": 5,
           "metadata": {
-            "section": "Format String Syntax"
-          }
+            "section": "Format String Syntax",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-1",
@@ -42,8 +48,11 @@
           "line_start": 7,
           "line_end": 10,
           "metadata": {
-            "section": "Format String Syntax"
-          }
+            "section": "Format String Syntax",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-2",
@@ -54,8 +63,11 @@
           "line_start": 12,
           "line_end": 12,
           "metadata": {
-            "section": "Format String Syntax"
-          }
+            "section": "Format String Syntax",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-html-3",
@@ -66,8 +78,11 @@
           "line_start": 14,
           "line_end": 24,
           "metadata": {
-            "section": "Format String Syntax"
-          }
+            "section": "Format String Syntax",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-4",
@@ -78,8 +93,11 @@
           "line_start": 26,
           "line_end": 32,
           "metadata": {
-            "section": "Format String Syntax"
-          }
+            "section": "Format String Syntax",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-5",
@@ -90,8 +108,11 @@
           "line_start": 34,
           "line_end": 36,
           "metadata": {
-            "section": "Format String Syntax"
-          }
+            "section": "Format String Syntax",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-6",
@@ -102,8 +123,11 @@
           "line_start": 38,
           "line_end": 38,
           "metadata": {
-            "section": "Format String Syntax"
-          }
+            "section": "Format String Syntax",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-code-7",
@@ -114,8 +138,11 @@
           "line_start": 40,
           "line_end": 50,
           "metadata": {
-            "section": "Format String Syntax"
-          }
+            "section": "Format String Syntax",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-8",
@@ -126,8 +153,11 @@
           "line_start": 52,
           "line_end": 55,
           "metadata": {
-            "section": "Format String Syntax"
-          }
+            "section": "Format String Syntax",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-h2-1",
@@ -139,8 +169,11 @@
           "line_end": 57,
           "metadata": {
             "level": 2,
-            "title": "Format Specification"
-          }
+            "title": "Format Specification",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-0",
@@ -151,8 +184,11 @@
           "line_start": 59,
           "line_end": 62,
           "metadata": {
-            "section": "Format Specification"
-          }
+            "section": "Format Specification",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-html-1",
@@ -163,8 +199,11 @@
           "line_start": 64,
           "line_end": 76,
           "metadata": {
-            "section": "Format Specification"
-          }
+            "section": "Format Specification",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-2",
@@ -175,8 +214,11 @@
           "line_start": 78,
           "line_end": 80,
           "metadata": {
-            "section": "Format Specification"
-          }
+            "section": "Format Specification",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-h3-2",
@@ -188,8 +230,11 @@
           "line_end": 82,
           "metadata": {
             "level": 3,
-            "title": "Fill and alignment"
-          }
+            "title": "Fill and alignment",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-0",
@@ -200,8 +245,11 @@
           "line_start": 84,
           "line_end": 85,
           "metadata": {
-            "section": "Fill and alignment"
-          }
+            "section": "Fill and alignment",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-table-1",
@@ -212,8 +260,11 @@
           "line_start": 87,
           "line_end": 91,
           "metadata": {
-            "section": "Fill and alignment"
-          }
+            "section": "Fill and alignment",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-2",
@@ -224,8 +275,11 @@
           "line_start": 93,
           "line_end": 98,
           "metadata": {
-            "section": "Fill and alignment"
-          }
+            "section": "Fill and alignment",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-3",
@@ -236,8 +290,11 @@
           "line_start": 100,
           "line_end": 101,
           "metadata": {
-            "section": "Fill and alignment"
-          }
+            "section": "Fill and alignment",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-code-4",
@@ -248,8 +305,11 @@
           "line_start": 103,
           "line_end": 108,
           "metadata": {
-            "section": "Fill and alignment"
-          }
+            "section": "Fill and alignment",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-h3-3",
@@ -261,8 +321,11 @@
           "line_end": 110,
           "metadata": {
             "level": 3,
-            "title": "Sign"
-          }
+            "title": "Sign",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-0",
@@ -273,8 +336,11 @@
           "line_start": 112,
           "line_end": 113,
           "metadata": {
-            "section": "Sign"
-          }
+            "section": "Sign",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-table-1",
@@ -285,8 +351,11 @@
           "line_start": 115,
           "line_end": 119,
           "metadata": {
-            "section": "Sign"
-          }
+            "section": "Sign",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-2",
@@ -297,8 +366,11 @@
           "line_start": 121,
           "line_end": 121,
           "metadata": {
-            "section": "Sign"
-          }
+            "section": "Sign",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-code-3",
@@ -309,8 +381,11 @@
           "line_start": 123,
           "line_end": 126,
           "metadata": {
-            "section": "Sign"
-          }
+            "section": "Sign",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-h3-4",
@@ -322,8 +397,11 @@
           "line_end": 128,
           "metadata": {
             "level": 3,
-            "title": "Alternate form (`#`)"
-          }
+            "title": "Alternate form (`#`)",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-0",
@@ -334,8 +412,11 @@
           "line_start": 130,
           "line_end": 131,
           "metadata": {
-            "section": "Alternate form (`#`)"
-          }
+            "section": "Alternate form (`#`)",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-1",
@@ -346,8 +427,11 @@
           "line_start": 133,
           "line_end": 140,
           "metadata": {
-            "section": "Alternate form (`#`)"
-          }
+            "section": "Alternate form (`#`)",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-2",
@@ -358,8 +442,11 @@
           "line_start": 142,
           "line_end": 142,
           "metadata": {
-            "section": "Alternate form (`#`)"
-          }
+            "section": "Alternate form (`#`)",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-h3-5",
@@ -371,8 +458,11 @@
           "line_end": 144,
           "metadata": {
             "level": 3,
-            "title": "Zero padding (`0`)"
-          }
+            "title": "Zero padding (`0`)",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-0",
@@ -383,8 +473,11 @@
           "line_start": 146,
           "line_end": 150,
           "metadata": {
-            "section": "Zero padding (`0`)"
-          }
+            "section": "Zero padding (`0`)",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-1",
@@ -395,8 +488,11 @@
           "line_start": 152,
           "line_end": 152,
           "metadata": {
-            "section": "Zero padding (`0`)"
-          }
+            "section": "Zero padding (`0`)",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-2",
@@ -407,8 +503,11 @@
           "line_start": 154,
           "line_end": 156,
           "metadata": {
-            "section": "Zero padding (`0`)"
-          }
+            "section": "Zero padding (`0`)",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-h3-6",
@@ -420,8 +519,11 @@
           "line_end": 158,
           "metadata": {
             "level": 3,
-            "title": "Width"
-          }
+            "title": "Width",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-0",
@@ -432,8 +534,11 @@
           "line_start": 160,
           "line_end": 164,
           "metadata": {
-            "section": "Width"
-          }
+            "section": "Width",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-1",
@@ -444,8 +549,11 @@
           "line_start": 166,
           "line_end": 168,
           "metadata": {
-            "section": "Width"
-          }
+            "section": "Width",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-2",
@@ -456,8 +564,11 @@
           "line_start": 170,
           "line_end": 174,
           "metadata": {
-            "section": "Width"
-          }
+            "section": "Width",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-code-3",
@@ -468,8 +579,11 @@
           "line_start": 176,
           "line_end": 183,
           "metadata": {
-            "section": "Width"
-          }
+            "section": "Width",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-h3-7",
@@ -481,8 +595,11 @@
           "line_end": 185,
           "metadata": {
             "level": 3,
-            "title": "Precision"
-          }
+            "title": "Precision",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-0",
@@ -493,8 +610,11 @@
           "line_start": 187,
           "line_end": 189,
           "metadata": {
-            "section": "Precision"
-          }
+            "section": "Precision",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-table-1",
@@ -505,8 +625,11 @@
           "line_start": 191,
           "line_end": 196,
           "metadata": {
-            "section": "Precision"
-          }
+            "section": "Precision",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-2",
@@ -517,8 +640,11 @@
           "line_start": 198,
           "line_end": 200,
           "metadata": {
-            "section": "Precision"
-          }
+            "section": "Precision",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-code-3",
@@ -529,8 +655,11 @@
           "line_start": 202,
           "line_end": 208,
           "metadata": {
-            "section": "Precision"
-          }
+            "section": "Precision",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-h3-8",
@@ -542,8 +671,11 @@
           "line_end": 210,
           "metadata": {
             "level": 3,
-            "title": "Locale (`L`)"
-          }
+            "title": "Locale (`L`)",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-0",
@@ -554,8 +686,11 @@
           "line_start": 212,
           "line_end": 216,
           "metadata": {
-            "section": "Locale (`L`)"
-          }
+            "section": "Locale (`L`)",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-code-1",
@@ -566,8 +701,11 @@
           "line_start": 218,
           "line_end": 222,
           "metadata": {
-            "section": "Locale (`L`)"
-          }
+            "section": "Locale (`L`)",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-h3-9",
@@ -579,8 +717,11 @@
           "line_end": 224,
           "metadata": {
             "level": 3,
-            "title": "Presentation type"
-          }
+            "title": "Presentation type",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-0",
@@ -591,8 +732,11 @@
           "line_start": 226,
           "line_end": 227,
           "metadata": {
-            "section": "Presentation type"
-          }
+            "section": "Presentation type",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-1",
@@ -603,8 +747,11 @@
           "line_start": 229,
           "line_end": 229,
           "metadata": {
-            "section": "Presentation type"
-          }
+            "section": "Presentation type",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-table-2",
@@ -615,8 +762,11 @@
           "line_start": 231,
           "line_end": 240,
           "metadata": {
-            "section": "Presentation type"
-          }
+            "section": "Presentation type",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-code-3",
@@ -627,8 +777,11 @@
           "line_start": 242,
           "line_end": 248,
           "metadata": {
-            "section": "Presentation type"
-          }
+            "section": "Presentation type",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-4",
@@ -639,8 +792,11 @@
           "line_start": 250,
           "line_end": 250,
           "metadata": {
-            "section": "Presentation type"
-          }
+            "section": "Presentation type",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-table-5",
@@ -651,8 +807,11 @@
           "line_start": 252,
           "line_end": 262,
           "metadata": {
-            "section": "Presentation type"
-          }
+            "section": "Presentation type",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-6",
@@ -663,8 +822,11 @@
           "line_start": 264,
           "line_end": 264,
           "metadata": {
-            "section": "Presentation type"
-          }
+            "section": "Presentation type",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-table-7",
@@ -675,8 +837,11 @@
           "line_start": 266,
           "line_end": 271,
           "metadata": {
-            "section": "Presentation type"
-          }
+            "section": "Presentation type",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-code-8",
@@ -687,8 +852,11 @@
           "line_start": 273,
           "line_end": 276,
           "metadata": {
-            "section": "Presentation type"
-          }
+            "section": "Presentation type",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-9",
@@ -699,8 +867,11 @@
           "line_start": 278,
           "line_end": 278,
           "metadata": {
-            "section": "Presentation type"
-          }
+            "section": "Presentation type",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-table-10",
@@ -711,8 +882,11 @@
           "line_start": 280,
           "line_end": 283,
           "metadata": {
-            "section": "Presentation type"
-          }
+            "section": "Presentation type",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-11",
@@ -723,8 +897,11 @@
           "line_start": 285,
           "line_end": 287,
           "metadata": {
-            "section": "Presentation type"
-          }
+            "section": "Presentation type",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-h2-10",
@@ -736,8 +913,11 @@
           "line_end": 289,
           "metadata": {
             "level": 2,
-            "title": "Chrono Format Specification"
-          }
+            "title": "Chrono Format Specification",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-0",
@@ -748,8 +928,11 @@
           "line_start": 291,
           "line_end": 292,
           "metadata": {
-            "section": "Chrono Format Specification"
-          }
+            "section": "Chrono Format Specification",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-html-1",
@@ -760,8 +943,11 @@
           "line_start": 294,
           "line_end": 310,
           "metadata": {
-            "section": "Chrono Format Specification"
-          }
+            "section": "Chrono Format Specification",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-2",
@@ -772,8 +958,11 @@
           "line_start": 312,
           "line_end": 313,
           "metadata": {
-            "section": "Chrono Format Specification"
-          }
+            "section": "Chrono Format Specification",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-3",
@@ -784,8 +973,11 @@
           "line_start": 315,
           "line_end": 315,
           "metadata": {
-            "section": "Chrono Format Specification"
-          }
+            "section": "Chrono Format Specification",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-html-4",
@@ -796,8 +988,11 @@
           "line_start": 317,
           "line_end": 592,
           "metadata": {
-            "section": "Chrono Format Specification"
-          }
+            "section": "Chrono Format Specification",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-5",
@@ -808,8 +1003,11 @@
           "line_start": 594,
           "line_end": 595,
           "metadata": {
-            "section": "Chrono Format Specification"
-          }
+            "section": "Chrono Format Specification",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-6",
@@ -820,8 +1018,11 @@
           "line_start": 597,
           "line_end": 597,
           "metadata": {
-            "section": "Chrono Format Specification"
-          }
+            "section": "Chrono Format Specification",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-table-7",
@@ -832,8 +1033,11 @@
           "line_start": 599,
           "line_end": 602,
           "metadata": {
-            "section": "Chrono Format Specification"
-          }
+            "section": "Chrono Format Specification",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-8",
@@ -844,8 +1048,11 @@
           "line_start": 604,
           "line_end": 605,
           "metadata": {
-            "section": "Chrono Format Specification"
-          }
+            "section": "Chrono Format Specification",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-9",
@@ -856,8 +1063,11 @@
           "line_start": 607,
           "line_end": 607,
           "metadata": {
-            "section": "Chrono Format Specification"
-          }
+            "section": "Chrono Format Specification",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-code-10",
@@ -868,8 +1078,11 @@
           "line_start": 609,
           "line_end": 621,
           "metadata": {
-            "section": "Chrono Format Specification"
-          }
+            "section": "Chrono Format Specification",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-h2-11",
@@ -881,8 +1094,11 @@
           "line_end": 623,
           "metadata": {
             "level": 2,
-            "title": "Range Format Specification"
-          }
+            "title": "Range Format Specification",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-0",
@@ -893,8 +1109,11 @@
           "line_start": 625,
           "line_end": 625,
           "metadata": {
-            "section": "Range Format Specification"
-          }
+            "section": "Range Format Specification",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-html-1",
@@ -905,8 +1124,11 @@
           "line_start": 627,
           "line_end": 629,
           "metadata": {
-            "section": "Range Format Specification"
-          }
+            "section": "Range Format Specification",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-2",
@@ -917,8 +1139,11 @@
           "line_start": 631,
           "line_end": 635,
           "metadata": {
-            "section": "Range Format Specification"
-          }
+            "section": "Range Format Specification",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-3",
@@ -929,8 +1154,11 @@
           "line_start": 637,
           "line_end": 637,
           "metadata": {
-            "section": "Range Format Specification"
-          }
+            "section": "Range Format Specification",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-4",
@@ -941,8 +1169,11 @@
           "line_start": 639,
           "line_end": 639,
           "metadata": {
-            "section": "Range Format Specification"
-          }
+            "section": "Range Format Specification",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-table-5",
@@ -953,8 +1184,11 @@
           "line_start": 641,
           "line_end": 645,
           "metadata": {
-            "section": "Range Format Specification"
-          }
+            "section": "Range Format Specification",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-6",
@@ -965,8 +1199,11 @@
           "line_start": 647,
           "line_end": 649,
           "metadata": {
-            "section": "Range Format Specification"
-          }
+            "section": "Range Format Specification",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-7",
@@ -977,8 +1214,11 @@
           "line_start": 651,
           "line_end": 652,
           "metadata": {
-            "section": "Range Format Specification"
-          }
+            "section": "Range Format Specification",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-8",
@@ -989,8 +1229,11 @@
           "line_start": 654,
           "line_end": 656,
           "metadata": {
-            "section": "Range Format Specification"
-          }
+            "section": "Range Format Specification",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-9",
@@ -1001,8 +1244,11 @@
           "line_start": 658,
           "line_end": 658,
           "metadata": {
-            "section": "Range Format Specification"
-          }
+            "section": "Range Format Specification",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-code-10",
@@ -1013,8 +1259,11 @@
           "line_start": 660,
           "line_end": 679,
           "metadata": {
-            "section": "Range Format Specification"
-          }
+            "section": "Range Format Specification",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-h2-12",
@@ -1026,8 +1275,11 @@
           "line_end": 681,
           "metadata": {
             "level": 2,
-            "title": "A Combined Example"
-          }
+            "title": "A Combined Example",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-0",
@@ -1038,8 +1290,11 @@
           "line_start": 683,
           "line_end": 685,
           "metadata": {
-            "section": "A Combined Example"
-          }
+            "section": "A Combined Example",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-code-1",
@@ -1050,8 +1305,11 @@
           "line_start": 687,
           "line_end": 692,
           "metadata": {
-            "section": "A Combined Example"
-          }
+            "section": "A Combined Example",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-p-2",
@@ -1062,8 +1320,11 @@
           "line_start": 694,
           "line_end": 694,
           "metadata": {
-            "section": "A Combined Example"
-          }
+            "section": "A Combined Example",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         },
         {
           "id": "syntax.md-code-3",
@@ -1074,8 +1335,11 @@
           "line_start": 696,
           "line_end": 700,
           "metadata": {
-            "section": "A Combined Example"
-          }
+            "section": "A Combined Example",
+            "translator": "agent:glm-5.3-flash in-session",
+            "translated_at": "2026-11-19"
+          },
+          "status": "translated"
         }
       ]
     },

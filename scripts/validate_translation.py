@@ -98,13 +98,32 @@ def strip_code(content: str) -> str:
     """Remove code so structural checks operate on prose only:
     - fenced code blocks and inline code spans;
     - indented code blocks (lines starting with >= 4 spaces — the corpus
-      convention; list continuation prose uses 2 spaces).
+      convention; list continuation prose uses 2 spaces), EXCEPT lines
+      inside HTML <pre> blocks, whose indented continuation lines are real
+      content (e.g. grammar blocks in syntax.md) and must survive stripping.
     Prevents tokens like <your-target> or `src/format.cc` from triggering
     HTML-tag / glossary false positives."""
     content = re.sub(r'```[\s\S]*?```', ' ', content)
     content = re.sub(r'`[^`\n]+`', ' ', content)
-    content = re.sub(r'^ {4,}\S.*$', ' ', content, flags=re.MULTILINE)
-    return content
+    lines = content.split('\n')
+    out = []
+    in_pre = False
+    for line in lines:
+        low = line.lower()
+        if in_pre:
+            if '</pre' in low:
+                in_pre = False
+            out.append(line)
+            continue
+        if '<pre' in low:
+            in_pre = True
+            out.append(line)
+            continue
+        if re.match(r'^ {4,}\S', line):
+            out.append(' ')
+        else:
+            out.append(line)
+    return '\n'.join(out)
 
 
 def tag_type_counts(tags: List[str]) -> Dict:

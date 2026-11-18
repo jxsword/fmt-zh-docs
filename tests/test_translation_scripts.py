@@ -237,6 +237,32 @@ class TestValidatorRefinements:
         result = vt.validate_file(src, tgt, {})
         assert result["errors"] == []
 
+    def test_pre_block_indented_lines_survive_strip(self, tmp_path):
+        """回归：语法块内部 ≥4 空格缩进的续行（如语法文法）是真实内容，
+        不得被缩进代码块启发式剔除——曾导致 </code> 消失、配对失败。"""
+        src = tmp_path / "s.md"
+        tgt = tmp_path / "t.md"
+        block = ('<pre><code class="language-json"\n'
+                 '>spec ::= "a" | "b"</code>\n'
+                 '</pre>\n')
+        src.write_text(block, encoding="utf-8")
+        tgt.write_text(block, encoding="utf-8")
+        result = vt.validate_file(src, tgt, {})
+        assert result["errors"] == []
+
+    def test_pre_block_indented_continuation_kept(self, tmp_path):
+        """跨行 <code ...> 开标签 + 缩进续行 + 尾部 </code> 的完整配对。"""
+        src = tmp_path / "s.md"
+        tgt = tmp_path / "t.md"
+        block = ('<pre><code class="language-json"\n'
+                 '>type ::= "a" |\n'
+                 '                "b"</code>\n'
+                 '</pre>\n')
+        src.write_text(block, encoding="utf-8")
+        tgt.write_text(block, encoding="utf-8")
+        result = vt.validate_file(src, tgt, {})
+        assert result["errors"] == []
+
     def test_glossary_check_still_matches_prose(self, tmp_path):
         src = tmp_path / "s.md"
         tgt = tmp_path / "t.md"

@@ -292,10 +292,16 @@ terms:
     usage_count: 0
 
   - en: "round-trip"
-    zh: "往返保证"
+    zh: "往返"
     status: "approved"
+    contexts:
+      - pattern: "round-trip guarantee"
+        zh: "往返保证"
+      - pattern: "round-trip representation"
+        zh: "往返表示"
+    default_zh: "往返"
     context: "syntax.md:api.md"
-    aliases: []
+    aliases: ["往返保证"]
     created_at: "2026-11-18"
     approved_by: "init"
     usage_count: 0
